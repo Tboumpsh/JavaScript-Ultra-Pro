@@ -1,4 +1,5 @@
 import changeColorOrder from "./DiscoloredInOrder/DiscoloredOrder";
+import createColors from "./createColor/createColor";
 import changeColor from "./ChangeColor/changeColor";
 
 /**
@@ -13,6 +14,8 @@ let nameProject = prompt(`Which one project choose:
 
 if (Number(nameProject) === 1) {
   changeColor();
-} else if (Number(nameProject) === 2) {
+} else if (Number(nameProject) === 3) {
   changeColorOrder();
+} else if (Number(nameProject) === 2) {
+  createColors();
 }

@@ -1,6 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import setRandomBackgroundColor from "./createRGB";
+
 function createColors() {
   let button = domGenerator({
     tag: "button",
@@ -9,8 +11,10 @@ function createColors() {
     eventListeners: { click: createColor },
   });
 
-  function createColor() {}
+  function createColor() {
+    setRandomBackgroundColor();
+  }
 
   document.body.append(button);
 }
-export default createColors
+export default createColors;
