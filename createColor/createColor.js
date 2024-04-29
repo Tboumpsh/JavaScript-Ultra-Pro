@@ -1,7 +1,7 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import setRandomBackgroundColor from "./createRGB";
+import setRandomBackgroundColor from "./RGBcreatore";
 
 function createColors() {
   let button = domGenerator({
