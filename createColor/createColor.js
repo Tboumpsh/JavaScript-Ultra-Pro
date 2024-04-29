@@ -7,7 +7,7 @@ function createColors() {
   let button = domGenerator({
     tag: "button",
     properties: { textContent: "Change me" },
-    attributes: { id: "button" },
+    attributes: { id: "buttonRGB" },
     eventListeners: { click: createColor },
   });
 

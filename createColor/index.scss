@@ -1,0 +1,18 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto;
+
+
+    #buttonRGB{
+        width: 30vw;
+        height: 10vh;
+        border-radius: 8px;
+        background-color: rgb(229, 151, 102);
+        border: 2px solid rgb(232, 89, 6);
+        color: rgb(104, 44, 3);
+    }
+
+}

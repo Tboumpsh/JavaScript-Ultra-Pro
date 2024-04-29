@@ -7,15 +7,15 @@ import changeColor from "./ChangeColor/changeColor";
  * @returns {void}
  */
 let nameProject = prompt(`Which one project choose:
-1. DiscoloredInOrder
-2. createColor
-3. ChangeColor
+1. Change the color of the plate between two specific colors
+2. Display the color with a special arrangement
+3. Construction of color with RGB
 `);
 
 if (Number(nameProject) === 1) {
   changeColor();
-} else if (Number(nameProject) === 3) {
-  changeColorOrder();
 } else if (Number(nameProject) === 2) {
+  changeColorOrder();
+} else if (Number(nameProject) === 3) {
   createColors();
 }
