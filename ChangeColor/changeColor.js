@@ -1,6 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import fixedColor from "./fixedColor";
+
 function changeColor() {
   let button = domGenerator({
     tag: "button",
@@ -9,18 +11,13 @@ function changeColor() {
     eventListeners: { click: changeColors },
   });
 
-  let variable = 0;
+
   function changeColors() {
-    variable = (variable + 1) % 2;
-    if (variable == 0) {
-      document.body.style.backgroundColor = "rgb(255, 174, 0)";
-    } else if (variable == 1) {
-      document.body.style.backgroundColor = "black";
-    }
+    fixedColor("black", "orang");
   }
 
-    return button
-//   document.body.append(button);
+  return button;
+  //   document.body.append(button);
 }
 
 export default changeColor;
