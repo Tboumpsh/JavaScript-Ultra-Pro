@@ -11,13 +11,11 @@ function changeColor() {
     eventListeners: { click: changeColors },
   });
 
-
   function changeColors() {
-    fixedColor("black", "orang");
+    fixedColor("black", "red");
   }
 
-  return button;
-  //   document.body.append(button);
+  document.body.append(button);
 }
 
 export default changeColor;
