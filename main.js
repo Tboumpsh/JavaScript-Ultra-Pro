@@ -1,4 +1,5 @@
 import changeColorOrder from "./DiscoloredInOrder/DiscoloredOrder";
+import temperatureConvert from "./convertCtoF/convert";
 import createColors from "./createColor/createColor";
 import changeColor from "./ChangeColor/changeColor";
 
@@ -10,6 +11,7 @@ let nameProject = prompt(`Which one project choose:
 1. Change the color of the plate between two specific colors
 2. Display the color with a special arrangement
 3. Construction of color with RGB
+4. temperatureConvert
 `);
 
 if (Number(nameProject) === 1) {
@@ -18,4 +20,6 @@ if (Number(nameProject) === 1) {
   changeColorOrder();
 } else if (Number(nameProject) === 3) {
   createColors();
+} else if (Number(nameProject) === 4) {
+  temperatureConvert();
 }
