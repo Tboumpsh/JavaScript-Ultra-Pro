@@ -25,9 +25,23 @@ function temperatureConvert() {
         properties: { textContent: "Convert" },
         eventListeners: { click: convertTo },
       },
+      {
+        tag: "p",
+        attributes: { id: "score" },
+      },
     ],
   });
-  function convertTo() {}
+
+  function convertTo() {
+    let p = document.getElementById("score");
+    let input = document.getElementById("input");
+    p.innerText = "";
+    let target = input.value;
+
+    let Fahrenheit = target * 1.8 + 32;
+    p.innerText += Fahrenheit;
+    input.value = "";
+  }
   document.body.append(convert);
 }
 
