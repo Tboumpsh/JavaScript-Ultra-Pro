@@ -13,7 +13,11 @@ function temperatureConvert() {
       },
       {
         tag: "input",
-        attributes: { id: "input", type: "text" },
+        attributes: {
+          id: "input",
+          type: "text",
+          placeholder: "Convert C To F",
+        },
       },
       {
         tag: "button",

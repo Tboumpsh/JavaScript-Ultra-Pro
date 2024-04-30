@@ -1,0 +1,55 @@
+body{
+    margin: 0 auto;
+
+
+
+
+#parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  width: 50vw;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: rgb(237, 202, 114);
+  border-radius: 20px;
+  border: 3px dashed  goldenrod;
+
+
+  #title {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  #input {
+    width: 35vw;
+    height: 10vh;
+    border-radius: 60px;
+    border: 2px solid goldenrod;
+    outline: none;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(241, 225, 184);
+
+    &::placeholder{
+        color:rgb(164, 162, 162) ;
+        font-weight: 700;
+        font-size: 15px;
+    }
+  }
+
+  #ctaB {
+    width: 20vw;
+    height: 8vh;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(226, 162, 1);
+    color: black;
+    background-color: goldenrod;
+  }
+}
+}
