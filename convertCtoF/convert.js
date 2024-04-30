@@ -1,6 +1,10 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+/**
+ * Generates a temperature conversion tool to convert Celsius to Fahrenheit.
+ * @returns {void}
+ */
 function temperatureConvert() {
   let convert = domGenerator({
     tag: "div",
@@ -31,7 +35,10 @@ function temperatureConvert() {
       },
     ],
   });
-
+  /**
+   * Converts the entered Celsius temperature to Fahrenheit and displays the result.
+   * @returns {void}
+   */
   function convertTo() {
     let p = document.getElementById("score");
     let input = document.getElementById("input");
