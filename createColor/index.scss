@@ -1,18 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15% auto;
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15% auto;
+  #buttonRGB {
+    width: 30vw;
+    height: 10vh;
+    border-radius: 8px;
+    background-color: rgb(229, 151, 102);
+    border: 2px solid rgb(232, 89, 6);
+    color: rgb(104, 44, 3);
+  }
+  &:hover {
+    animation-name: act;
+    animation-duration: 3s;
 
-
-    #buttonRGB{
-        width: 30vw;
-        height: 10vh;
-        border-radius: 8px;
-        background-color: rgb(229, 151, 102);
-        border: 2px solid rgb(232, 89, 6);
-        color: rgb(104, 44, 3);
+    @keyframes act {
+      20% {
+        transform: translateX(5px);
+        scale: (1.2);
+      }
+      21% {
+        transform: translateX(-9px);
+      }
+      29% {
+        transform: translateX(5px);
+        scale: (0.5);
+      }
+      35% {
+        transform: translateX(-8px);
+      }
     }
-
+  }
 }
