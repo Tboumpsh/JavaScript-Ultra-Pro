@@ -1,5 +1,5 @@
 import domGenerator from "dom-generator";
-import "./index.scss";
+import "./game.scss";
 
 /**
  * Generates a button that changes the background color of the body in a cyclic order when clicked.

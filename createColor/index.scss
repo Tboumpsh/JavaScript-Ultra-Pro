@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15% auto;
+  // margin: 15% auto;
 
   #buttonRGB {
     width: 30vw;
@@ -11,25 +11,26 @@ body {
     background-color: rgb(229, 151, 102);
     border: 2px solid rgb(232, 89, 6);
     color: rgb(104, 44, 3);
-  }
-  &:hover {
-    animation-name: act;
-    animation-duration: 3s;
 
-    @keyframes act {
-      20% {
-        transform: translateX(5px);
-        scale: (1.2);
-      }
-      21% {
-        transform: translateX(-9px);
-      }
-      29% {
-        transform: translateX(5px);
-        scale: (0.5);
-      }
-      35% {
-        transform: translateX(-8px);
+    &:hover {
+      animation-name: act;
+      animation-duration: 3s;
+
+      @keyframes act {
+        20% {
+          transform: translateX(5px);
+          scale: (1.2);
+        }
+        21% {
+          transform: translateX(-9px);
+        }
+        29% {
+          transform: translateX(5px);
+          scale: (0.5);
+        }
+        35% {
+          transform: translateX(-8px);
+        }
       }
     }
   }
