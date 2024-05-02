@@ -34,6 +34,7 @@ body {
         margin: 0;
         text-align: center;
         color: #3b3b3b;
+        font-weight: 700;
       }
       #paragraph {
         margin: 0;
@@ -51,11 +52,14 @@ body {
         gap: 15px;
 
         #buttonCTA {
-          width: 40%;
-          height: 30px;
+          width: 45%;
+          height: 40px;
           border: none;
           border-radius: 30px;
           outline: none;
+          background-color: #b2a39e;
+          color: white;
+          border: 2px dashed #f9ae00;
         }
         #input {
           width: 90%;
@@ -64,6 +68,7 @@ body {
           border: none;
           border-radius: 30px;
           outline: none;
+          border: 2px dashed  #b2a39e;
         }
       }
       #buttonP {
@@ -74,7 +79,8 @@ body {
         outline: none;
         background-color: #ffde54;
         box-shadow: -1px 1px 20px 0px #ffb303a3;
-        color: #ffb303a3;
+        color: #3b3b3b;
+        font-weight: 600;
       }
     }
   }

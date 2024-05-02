@@ -33,7 +33,7 @@ function gameChallenge() {
             children: [
               {
                 tag: "label",
-                properties: { textContent: "this is label" },
+                properties: { textContent: "Enter your guess number:" },
               },
               {
                 tag: "input",
