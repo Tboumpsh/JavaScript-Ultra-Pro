@@ -1,10 +1,9 @@
 import domGenerator from "dom-generator";
+import "./silverBox.min.scss";
 import "./game.scss";
 
-/**
- * Generates a button that changes the background color of the body in a cyclic order when clicked.
- * @returns {void}
- */
+import findNumber from "./guessNumber";
+
 function gameChallenge() {
   let game = domGenerator({
     tag: "div",
@@ -59,51 +58,24 @@ function gameChallenge() {
     ],
   });
   let number;
-  let wrongAnswers = 0;
   function guess() {
     let form = document.getElementById("form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
     });
     let input = document.getElementById("input");
-    let i = 0;
-
-    let loopComplete = false;
-    while (i < 5 && wrongAnswers < 5) {
-      if (parseInt(input.value) === number) {
-        console.log("You win!");
-        loopComplete = true;
-        break;
-      } else if (parseInt(input.value) > number) {
-        console.log("Too large");
-        wrongAnswers++;
-        loopComplete = false;
-        break;
-      } else if (parseInt(input.value) < number) {
-        console.log("Too small");
-        wrongAnswers++;
-        console.log(wrongAnswers);
-        loopComplete = false;
-        break;
-      }
-
-      // Exit the loop if the user has entered 5 wrong answers.
-      if (wrongAnswers == 5) {
-        loopComplete = true;
-        break;
-      }
-
-      // Increment the i variable.
-      i++;
-    }
-
-    if (loopComplete === true) {
-      console.log("You lose!");
-    }
+    findNumber(input, number);
   }
   function action() {
     number = Math.floor(Math.random() * 100);
-    console.log(number);
+    silverBox({
+      timer: 2000,
+      customIcon: "./images/gameChallenge/download (2).jpg",
+      title: {
+        text: "I chose the number.",
+      },
+      centerContent: true,
+    });
   }
 
   document.body.append(game);
