@@ -75,7 +75,12 @@ body {
           border: none;
           border-radius: 30px;
           outline: none;
-         
+  
+
+          &.disabled{
+            color: #3b3b3b;
+            background-color: #b2a39e;
+          }
         }
       }
       #buttonP {
@@ -89,6 +94,8 @@ body {
         color: #3b3b3b;
         font-weight: 600;
       }
+
     }
+ 
   }
 }

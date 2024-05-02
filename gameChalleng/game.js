@@ -43,7 +43,7 @@ function gameChallenge() {
               {
                 tag: "button",
                 attributes: { id: "buttonCTA" },
-                eventListeners: { click: gust },
+                eventListeners: { click: guess },
                 properties: { textContent: "Welcome in my Game" },
               },
             ],
@@ -59,38 +59,49 @@ function gameChallenge() {
     ],
   });
   let number;
-  function gust() {
+  let wrongAnswers = 0;
+  function guess() {
     let form = document.getElementById("form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
     });
     let input = document.getElementById("input");
     let i = 0;
+
     let loopComplete = false;
-    while (i <= 4) {
-        if (input.value === number) {
-          console.log("y");
-          loopComplete = true;
-          break;
-        } else if (input.value > number) {
-          console.log("large");
-          loopComplete = true;
-        } else if (input.value < number) {
-          console.log("small");
-          loopComplete = true;
-        }
-      
-        if (i == 4) {
-          console.log("Loop is over");
-          loopComplete = false;
-          break;
-        }
-      
-        i++;
+    while (i < 5 && wrongAnswers < 5) {
+      if (parseInt(input.value) === number) {
+        console.log("You win!");
+        loopComplete = true;
+        break;
+      } else if (parseInt(input.value) > number) {
+        console.log("Too large");
+        wrongAnswers++;
+        loopComplete = false;
+        break;
+      } else if (parseInt(input.value) < number) {
+        console.log("Too small");
+        wrongAnswers++;
+        console.log(wrongAnswers);
+        loopComplete = false;
+        break;
       }
+
+      // Exit the loop if the user has entered 5 wrong answers.
+      if (wrongAnswers == 5) {
+        loopComplete = true;
+        break;
+      }
+
+      // Increment the i variable.
+      i++;
+    }
+
+    if (loopComplete === true) {
+      console.log("You lose!");
+    }
   }
   function action() {
-    let input = document.getElementById("input");
     number = Math.floor(Math.random() * 100);
     console.log(number);
   }
