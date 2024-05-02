@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/concert-one");
+
 body {
   display: flex;
   justify-content: center;
@@ -8,6 +10,72 @@ body {
     height: 100vh;
     background-image: url("public/images/gameChallenge/0e45ae65e082395ff0b319931f58b60f.gif");
     background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Concert One", sans-serif;
+
     // background-repeat: no-repeat;
+
+    #gamePlace {
+      padding: 2%;
+      width: 50vw;
+      height: 60vh;
+      border-radius: 40px;
+      background-color: #ffc642dc;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 60px;
+      border: 2px dashed #b2a39e;
+
+      #title {
+        font-size: 50px;
+        margin: 0;
+        text-align: center;
+        color: #3b3b3b;
+      }
+      #paragraph {
+        margin: 0;
+        text-align: center;
+        width: 381px;
+        color: #3b3b3b;
+      }
+      #form {
+        display: flex;
+        width: 60%;
+        height: 40vh;
+        //   justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+
+        #buttonCTA {
+          width: 40%;
+          height: 30px;
+          border: none;
+          border-radius: 30px;
+          outline: none;
+        }
+        #input {
+          width: 90%;
+          height: 45px;
+          text-align: center;
+          border: none;
+          border-radius: 30px;
+          outline: none;
+        }
+      }
+      #buttonP {
+        width: 80%;
+        height: 120px;
+        border: 1px solid #fab81ca3;
+        border-radius: 30px;
+        outline: none;
+        background-color: #ffde54;
+        box-shadow: -1px 1px 20px 0px #ffb303a3;
+        color: #ffb303a3;
+      }
+    }
   }
 }
