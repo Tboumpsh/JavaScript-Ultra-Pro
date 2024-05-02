@@ -37,7 +37,7 @@ function gameChallenge() {
               },
               {
                 tag: "input",
-                properties: { type: "text", placeholder: "input..." },
+                properties: { type: "number", placeholder: "input..." },
                 attributes: { id: "input" },
               },
               {
@@ -58,9 +58,42 @@ function gameChallenge() {
       },
     ],
   });
-
-  function gust() {}
-  function action() {}
+  let number;
+  function gust() {
+    let form = document.getElementById("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+    let input = document.getElementById("input");
+    let i = 0;
+    let loopComplete = false;
+    while (i <= 4) {
+        if (input.value === number) {
+          console.log("y");
+          loopComplete = true;
+          break;
+        } else if (input.value > number) {
+          console.log("large");
+          loopComplete = true;
+        } else if (input.value < number) {
+          console.log("small");
+          loopComplete = true;
+        }
+      
+        if (i == 4) {
+          console.log("Loop is over");
+          loopComplete = false;
+          break;
+        }
+      
+        i++;
+      }
+  }
+  function action() {
+    let input = document.getElementById("input");
+    number = Math.floor(Math.random() * 100);
+    console.log(number);
+  }
 
   document.body.append(game);
 }

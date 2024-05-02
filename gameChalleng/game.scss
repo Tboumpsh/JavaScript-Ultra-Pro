@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Concert One", sans-serif;
+    backdrop-filter: blur(5px);
 
     // background-repeat: no-repeat;
 
@@ -27,7 +28,6 @@ body {
       align-items: center;
       flex-direction: column;
       gap: 60px;
-      border: 2px dashed #b2a39e;
 
       #title {
         font-size: 50px;
@@ -59,7 +59,14 @@ body {
           outline: none;
           background-color: #b2a39e;
           color: white;
-          border: 2px dashed #f9ae00;
+
+          &:hover{
+            color:#fab71c;
+            border: 2px solid #fab71c;
+            scale: 1.1;
+            transition-duration: 1s;
+          }
+          
         }
         #input {
           width: 90%;
@@ -68,7 +75,7 @@ body {
           border: none;
           border-radius: 30px;
           outline: none;
-          border: 2px dashed  #b2a39e;
+         
         }
       }
       #buttonP {
