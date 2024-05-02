@@ -59,15 +59,39 @@ function gameChallenge() {
   });
   let number;
   let wrongAnswers = 0;
+  /**
+   * Initiates the guessing game by preventing the default form submission behavior,
+   * capturing user input, and calling the findNumber function to determine if the
+   * guessed number matches the target number.
+   * @returns {void}
+   */
   function guess() {
+    /**
+     * Retrieves the form element from the DOM.
+     * @type {HTMLFormElement}
+     */
     let form = document.getElementById("form");
     form.addEventListener("submit", (e) => {
+      // Prevents the default form submission behavior.
       e.preventDefault();
     });
+    /**
+     * Retrieves the input element from the DOM.
+     * @type {HTMLInputElement}
+     */
     let input = document.getElementById("input");
+    // Calls the findNumber function to determine if the guessed number matches the target number.
     findNumber(input, number);
   }
+  /**
+   * Generates a random number and displays a message indicating the number has been chosen.
+   * @returns {void}
+   */
   function action() {
+    /**
+     * The randomly generated target number for the guessing game.
+     * @type {number}
+     */
     number = Math.floor(Math.random() * 100);
     silverBox({
       timer: 2000,
