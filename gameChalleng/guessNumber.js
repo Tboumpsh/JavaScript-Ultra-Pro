@@ -1,8 +1,24 @@
 let wrongAnswers = 0;
-
+/**
+ * The number of wrong answers entered by the user.
+ * @type {number}
+ */
+/**
+ * Finds the number guessed by the user within 5 attempts.
+ * @param {HTMLInputElement} input - The input element where the user enters their guess.
+ * @param {number} number - The number to be guessed by the user.
+ * @returns {void}
+ */
 function findNumber(input, number) {
+  /**
+   * The current iteration count.
+   * @type {number}
+   */
   let i = 0;
-
+  /**
+   * Indicates whether the loop has completed.
+   * @type {boolean}
+   */
   let loopComplete = false;
   while (i < 5 && wrongAnswers < 5) {
     if (parseInt(input.value) === number) {

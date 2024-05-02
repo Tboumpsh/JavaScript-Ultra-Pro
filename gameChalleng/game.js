@@ -58,6 +58,7 @@ function gameChallenge() {
     ],
   });
   let number;
+  let wrongAnswers = 0;
   function guess() {
     let form = document.getElementById("form");
     form.addEventListener("submit", (e) => {
