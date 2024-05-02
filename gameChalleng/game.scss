@@ -1,7 +1,13 @@
-#parentDiv{
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #parentDiv {
     width: 100vw;
     height: 100vh;
-    background-image: url('./images/gameChallenge/download (1).gif');
+    background-image: url("public/images/gameChallenge/0e45ae65e082395ff0b319931f58b60f.gif");
     background-size: contain;
     // background-repeat: no-repeat;
+  }
 }
