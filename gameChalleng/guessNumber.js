@@ -44,9 +44,10 @@ function findNumber(input, number) {
       text: "You lost but don't be sad and try again.",
       centerContent: true,
       cancelButton: {
-        text: "OK",
+        text: "try again",
       },
     });
+    input.value = "";
   }
 }
 

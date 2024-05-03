@@ -14,22 +14,23 @@ import gameChallenge from "./gameChalleng/game";
 //         name:
 //     }
 // ]
-let nameProject = prompt(`Which one project choose:
-1. Change the color of the plate between two specific colors
-2. Display the color with a special arrangement
-3. Construction of color with RGB
-4. temperatureConvert
-`);
+// let nameProject = prompt(`Which one project choose:
+// 1. Change the color of the plate between two specific colors
+// 2. Display the color with a special arrangement
+// 3. Construction of color with RGB
+// 4. temperatureConvert
+// 5. gameChallenge
+// `);
 
-if (Number(nameProject) === 1) {
-  changeColor();
-} else if (Number(nameProject) === 2) {
-  changeColorOrder();
-} else if (Number(nameProject) === 3) {
-  createColors();
-} else if (Number(nameProject) === 4) {
-  temperatureConvert();
-} else if (Number(nameProject) === 5) {
-  gameChallenge();
-}
-// gameChallenge()
+// if (Number(nameProject) === 1) {
+//   changeColor();
+// } else if (Number(nameProject) === 2) {
+//   changeColorOrder();
+// } else if (Number(nameProject) === 3) {
+//   createColors();
+// } else if (Number(nameProject) === 4) {
+//   temperatureConvert();
+// } else if (Number(nameProject) === 5) {
+//   gameChallenge();
+// }
+gameChallenge()

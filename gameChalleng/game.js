@@ -36,7 +36,10 @@ function gameChallenge() {
               },
               {
                 tag: "input",
-                properties: { type: "number", placeholder: "input..." },
+                properties: {
+                  type: "number",
+                  placeholder: "Enter your number",
+                },
                 attributes: { id: "input" },
               },
               {
@@ -44,6 +47,10 @@ function gameChallenge() {
                 attributes: { id: "buttonCTA" },
                 eventListeners: { click: guess },
                 properties: { textContent: "Welcome in my Game" },
+              },
+              {
+                tag: "p",
+                attributes: { id: "p" },
               },
             ],
           },
