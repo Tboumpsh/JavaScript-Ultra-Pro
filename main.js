@@ -1,7 +1,7 @@
 import findChallenge from "./src/findProject";
 
 /**
- * Prompts the user to choose a project and executes the corresponding function based on the choice.
+ * Initiates the process of finding and executing a JavaScript project.
  * @returns {void}
  */
 findChallenge();
