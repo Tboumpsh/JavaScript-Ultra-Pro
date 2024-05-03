@@ -3,6 +3,7 @@ import "./silverBox.min.scss";
 import "./game.scss";
 
 import findNumber from "./guessNumber";
+import time from "./timer";
 
 function gameChallenge() {
   let game = domGenerator({
@@ -108,6 +109,7 @@ function gameChallenge() {
       },
       centerContent: true,
     });
+    time()
   }
 
   document.body.append(game);

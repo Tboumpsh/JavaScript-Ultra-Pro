@@ -13,6 +13,7 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "dom-generator": "^1.1.7"
+    "dom-generator": "^1.1.7",
+    "easytimer.js": "^4.6.0"
   }
 }
