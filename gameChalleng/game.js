@@ -58,7 +58,7 @@ function gameChallenge() {
     ],
   });
   let number;
-  let wrongAnswers = 0;
+
   /**
    * Initiates the guessing game by preventing the default form submission behavior,
    * capturing user input, and calling the findNumber function to determine if the

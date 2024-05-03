@@ -10,17 +10,7 @@ let wrongAnswers = 0;
  * @returns {void}
  */
 function findNumber(input, number) {
-  /**
-   * The current iteration count.
-   * @type {number}
-   */
-  let i = 0;
-  /**
-   * Indicates whether the loop has completed.
-   * @type {boolean}
-   */
-  let loopComplete = false;
-  while (i < 5 && wrongAnswers < 5) {
+  if (wrongAnswers < 5) {
     if (parseInt(input.value) === number) {
       silverBox({
         title: {
@@ -29,9 +19,7 @@ function findNumber(input, number) {
         },
         text: "You guessed right.",
       });
-      // loopComplete = true;
       input.value = "";
-      break;
     } else if (parseInt(input.value) > number) {
       silverBox({
         position: "top-right",
@@ -40,9 +28,6 @@ function findNumber(input, number) {
         centerContent: true,
         showCloseButton: true,
       });
-      wrongAnswers++;
-      loopComplete = false;
-      break;
     } else if (parseInt(input.value) < number) {
       silverBox({
         position: "top-right",
@@ -51,21 +36,9 @@ function findNumber(input, number) {
         centerContent: true,
         showCloseButton: true,
       });
-      wrongAnswers++;
-      loopComplete = false;
-      break;
     }
-
-    // Exit the loop if the user has entered 5 wrong answers.
-    if (wrongAnswers == 5) {
-      loopComplete = true;
-      break;
-    }
-
-    i++;
-  }
-
-  if (loopComplete === true) {
+    wrongAnswers++;
+  } else {
     silverBox({
       alertIcon: "error",
       text: "You lost but don't be sad and try again.",
