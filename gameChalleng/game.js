@@ -49,10 +49,6 @@ function gameChallenge() {
                 eventListeners: { click: guess },
                 properties: { textContent: "My guess" },
               },
-              {
-                tag: "p",
-                attributes: { id: "p" },
-              },
             ],
           },
           {
