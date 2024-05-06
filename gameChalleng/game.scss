@@ -83,6 +83,11 @@ body {
           &:hover {
             background-color: #fcfaf4;
           }
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
         }
       }
       #buttonP {
