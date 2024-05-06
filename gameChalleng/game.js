@@ -24,7 +24,7 @@ function gameChallenge() {
             attributes: { id: "paragraph" },
             properties: {
               textContent:
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt provident tenetur, laboriosam soluta, dolorem magnam rerum quia distinctio dignissimos possimus corporis quos, quo quisquam? Id ducimus consequatur quas nobis iusto. ",
+                "Start the game first by clicking the Start button. That is, you rent the system to guess the number. Then enter your selected number in the field above and click on the 'My guess' button. So that you can check your guess with the system number. And the system also guides you. Whether or not your entered number is smaller than the target number.",
             },
           },
           {
@@ -47,7 +47,7 @@ function gameChallenge() {
                 tag: "button",
                 attributes: { id: "buttonCTA" },
                 eventListeners: { click: guess },
-                properties: { textContent: "Welcome in my Game" },
+                properties: { textContent: "My guess" },
               },
               {
                 tag: "p",
@@ -109,7 +109,7 @@ function gameChallenge() {
       },
       centerContent: true,
     });
-    time()
+    time();
   }
 
   document.body.append(game);
