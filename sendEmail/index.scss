@@ -3,15 +3,16 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 90vw;
-  height: 798px;
-  //   background-color: bisque;
+  width: 100vw;
+  height: 837px;
+    // background-color: bisque;
+    background-image: url('../public/images/sendEmail/group536.png');
 
   #mainDiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 60%;
     height: 798px;
     // background-color: pink;
   }
@@ -23,9 +24,11 @@
     gap: 70px;
     width: 90%;
     height: 700px;
-    background-color: rgba(26, 46, 53, 0.427);
+    background-color: rgba(49, 56, 56, 0.553);
     padding: 1% 2%;
     border-radius: 15px;
+    box-shadow: rgba(5, 37, 56, 0.568) 0px 2px 5px -1px, rgba(26, 46, 53, 0.683) 0px 1px 3px -1px;
+  
     #buttonsSection {
       display: flex;
       justify-content: space-evenly;
