@@ -3,6 +3,8 @@ import "./index.scss";
 
 import buttonGenerator from "./components/buttonComponents/buttonComponent";
 import inputGenerator from "./components/inputComponents/inputComponent";
+import checkersText from "./checkersText";
+import checkersEmail from "./checker";
 
 function sendEmail() {
   let send = domGenerator({
@@ -16,6 +18,7 @@ function sendEmail() {
           {
             tag: "form",
             attributes: { id: "formValidation" },
+            eventListeners: { submit: (e) => e.preventDefault() },
             children: [
               {
                 tag: inputGenerator({
@@ -25,6 +28,7 @@ function sendEmail() {
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
+                  eventListeners: { blur: blurCheck },
                 }),
               },
               {
@@ -35,6 +39,7 @@ function sendEmail() {
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
+                  // eventListeners: { blur: blurChecked },
                 }),
               },
               {
@@ -45,6 +50,7 @@ function sendEmail() {
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
+                  // eventListeners: { blur: blurCheck },
                 }),
               },
               {
@@ -79,6 +85,11 @@ function sendEmail() {
       },
     ],
   });
+  function blurCheck() {
+    checkersEmail();
+  }
+
+
 
   document.body.append(send);
 }

@@ -49,6 +49,7 @@
   &[data-status="checkedInput"] {
     background-color: transparent;
     color: #222222;
+    border: none;
     border-bottom: 4px solid rgba(20, 172, 35, 1);
     text-align: center;
     outline: none;
@@ -71,6 +72,7 @@
   &[data-status="failedInput"] {
     background-color: transparent;
     color: #222222;
+    border: none;
     border-bottom: 4px solid rgb(223, 51, 45);
     text-align: center;
     outline: none;

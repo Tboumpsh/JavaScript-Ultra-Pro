@@ -16,7 +16,7 @@ function inputGenerator({
     tag: "input",
     attributes: {
       id: inputId,
-      class: `inputStyles  ${inputClass}`,
+      class: `inputStyles ${inputClass}`,
       placeholder: placeholder,
     },
     dataAttributes: { size: size, status: statues, fontSize: fontSize },
