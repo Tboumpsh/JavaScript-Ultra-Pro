@@ -73,7 +73,7 @@ function sendEmail() {
                       statues: "Refresh",
                       type: "button",
                       class: "buttonRefresh",
-                      eventListeners: { click: () => console.log("Hi!") },
+                      eventListeners: { click: RefreshEmails },
                     }),
                   },
                 ],
@@ -85,12 +85,11 @@ function sendEmail() {
     ],
   });
 
-  // checkers(inputSubject);
-  // checkers(inputEmail);
-  // checkers(inputMessage);
   window.addEventListener("DOMContentLoaded", startAction);
   function startAction() {}
-
+  // inputEmail.value = "";
+  // inputMessage.value = "";
+  // inputSubject.value = "";
   let count = 0;
 
   function checkEmail() {
@@ -149,6 +148,15 @@ function sendEmail() {
       alert("not send");
     }
   }
+  function RefreshEmails() {
+    let inputMessage = document.getElementById("inputMessage");
+    let inputSubject = document.getElementById("inputSubject");
+    let inputEmail = document.getElementById("inputEmail");
+    inputEmail.value = "";
+    inputSubject.value = "";
+    inputMessage.value = "";
+  }
+
   startAction();
   document.body.append(send);
 }
