@@ -1,6 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import inputGenerator from "./components/inputComponent";
+
 function sendEmail() {
   let send = domGenerator({
     tag: "section",
