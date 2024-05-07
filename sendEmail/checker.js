@@ -1,5 +1,5 @@
 function checkers(input) {
-    let type = input.getAttribute("type");
+    let type = input.type
   if (type === "email") {
     if (input.value !== "") {
       if (input.value.includes("@")) {

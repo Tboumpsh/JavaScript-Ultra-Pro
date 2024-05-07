@@ -27,6 +27,7 @@ function sendEmail() {
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
+                  eventListeners: { blur: checkEmail },
                 }),
               },
               {
@@ -37,7 +38,7 @@ function sendEmail() {
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
-                  // eventListeners: { blur: blurChecked },
+                  eventListeners: { blur: checkSubject },
                 }),
               },
               {
@@ -48,7 +49,7 @@ function sendEmail() {
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
-                  // eventListeners: { blur: blurCheck },
+                  eventListeners: { blur: checkMessage },
                 }),
               },
               {
@@ -62,12 +63,12 @@ function sendEmail() {
                       statues: "primary",
                       type: "button",
                       class: "buttonPrimary",
-                      eventListeners: { click: () => console.log("Hi!") },
+                      eventListeners: { click: sendEmails },
                     }),
                   },
                   {
                     tag: buttonGenerator({
-                      content: "send",
+                      content: "Refresh",
                       size: "medium",
                       statues: "Refresh",
                       type: "button",
@@ -83,13 +84,72 @@ function sendEmail() {
       },
     ],
   });
-  let inputEmail = document.getElementById("inputEmail");
-  let inputSubject = document.getElementById("inputSubject");
-  let inputMessage = document.getElementById("inputMessage");
+
   // checkers(inputSubject);
   // checkers(inputEmail);
   // checkers(inputMessage);
+  window.addEventListener("DOMContentLoaded", startAction);
+  function startAction() {}
 
+  let count = 0;
+
+  function checkEmail() {
+    let inputEmail = document.getElementById("inputEmail");
+    let type = inputEmail.type;
+    if (type === "email") {
+      if (inputEmail.value !== "") {
+        if (inputEmail.value.includes("@")) {
+          inputEmail.setAttribute("data-status", "checkedInput");
+          count++;
+        } else {
+          inputEmail.setAttribute("data-status", "failedInput");
+          count--;
+        }
+      } else {
+        inputEmail.setAttribute("data-status", "failedInput");
+        alert("Please enter your email");
+      }
+    }
+  }
+
+  function checkSubject() {
+    let inputSubject = document.getElementById("inputSubject");
+    let type = inputSubject.type;
+    if (type === "text") {
+      if (inputSubject.value !== "") {
+        inputSubject.setAttribute("data-status", "checkedInput");
+        count++;
+      } else {
+        inputSubject.setAttribute("data-status", "failedInput");
+        inputSubject.value = "undefined";
+        count--;
+      }
+    }
+  }
+
+  function checkMessage() {
+    let inputMessage = document.getElementById("inputMessage");
+    let type = inputMessage.type;
+    if (type === "text") {
+      if (inputMessage.value !== "") {
+        inputMessage.setAttribute("data-status", "checkedInput");
+        count++;
+      } else {
+        inputMessage.setAttribute("data-status", "failedInput");
+        count--;
+        alert("Please enter yor message");
+      }
+    }
+  }
+  function sendEmails() {
+    console.log(count);
+    if (count == 3) {
+      alert("send");
+    } else {
+      alert("not send");
+    }
+  }
+  startAction();
   document.body.append(send);
 }
 export default sendEmail;
