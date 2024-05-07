@@ -1,6 +1,7 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import buttonGenerator from "./components/buttonComponents/buttonComponent";
 import inputGenerator from "./components/inputComponents/inputComponent";
 
 function sendEmail() {
@@ -47,14 +48,31 @@ function sendEmail() {
                 }),
               },
               {
-                tag:'div',
-                attributes:{id:'buttonsSection'},
-                // children:[
-                //   {
-
-                //   }
-                // ]
-              }
+                tag: "div",
+                attributes: { id: "buttonsSection" },
+                children: [
+                  {
+                    tag: buttonGenerator({
+                      content: "sendEmail",
+                      size: "medium",
+                      statues: "primary",
+                      type: "button",
+                      class: "buttonPrimary",
+                      eventListeners: { click: () => console.log("Hi!") },
+                    }),
+                  },
+                  {
+                    tag: buttonGenerator({
+                      content: "send",
+                      size: "medium",
+                      statues: "Refresh",
+                      type: "button",
+                      class: "buttonRefresh",
+                      eventListeners: { click: () => console.log("Hi!") },
+                    }),
+                  },
+                ],
+              },
             ],
           },
         ],

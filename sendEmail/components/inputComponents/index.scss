@@ -32,13 +32,14 @@
     outline: none;
 
     &:hover {
+      border-bottom: 4px solid rgba(239, 155, 5, 1);
       transform: scale(1.1);
       transition-duration: 1s;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
     &:focus,
     &:active {
-      border-bottom: 4px solid rgba(51, 49, 49, 1);
+      border-bottom: 4px solid rgba(26, 46, 53, 1);
     }
     &:disabled {
       color: #8c8c8c;
@@ -54,7 +55,7 @@
 
     &:hover {
       transform: scale(1.1);
-      transition-duration: 2s;
+      transition-duration: 1s;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
     &:focus,
@@ -76,7 +77,7 @@
 
     &:hover {
       transform: scale(1.1);
-      transition-duration: 2s;
+      transition-duration: 1s;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
     &:focus,
