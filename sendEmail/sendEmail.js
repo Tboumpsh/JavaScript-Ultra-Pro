@@ -3,7 +3,6 @@ import "./index.scss";
 
 import buttonGenerator from "./components/buttonComponents/buttonComponent";
 import inputGenerator from "./components/inputComponents/inputComponent";
-import checkers from "./checker";
 
 function sendEmail() {
   let send = domGenerator({
