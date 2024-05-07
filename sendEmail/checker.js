@@ -1,17 +1,24 @@
-function checkersEmail() {
-  let inputEmail = document.querySelector(".inputStyles:first-of-type");
-  if (inputEmail.type === "email") {
-    if (inputEmail.value !== "") {
-      if (inputEmail.value.includes("@")) {
-        inputEmail.setAttribute("data-status", "checkedInput");
+function checkers(input) {
+    let type = input.getAttribute("type");
+  if (type === "email") {
+    if (input.value !== "") {
+      if (input.value.includes("@")) {
+        input.setAttribute("data-status", "checkedInput");
       } else {
-        inputEmail.setAttribute("data-status", "failedInput");
+        input.setAttribute("data-status", "failedInput");
       }
     } else {
-      inputEmail.setAttribute("data-status", "failedInput");
+      input.setAttribute("data-status", "failedInput");
       alert("Please enter your email");
+    }
+  } else if (type === "text") {
+    if (input.value !== "") {
+      input.setAttribute("data-status", "checkedInput");
+    } else {
+      input.setAttribute("data-status", "failedInput");
+      input.value = "undefined";
     }
   }
 }
 
-export default checkersEmail;
+export default checkers;

@@ -3,8 +3,7 @@ import "./index.scss";
 
 import buttonGenerator from "./components/buttonComponents/buttonComponent";
 import inputGenerator from "./components/inputComponents/inputComponent";
-import checkersText from "./checkersText";
-import checkersEmail from "./checker";
+import checkers from "./checker";
 
 function sendEmail() {
   let send = domGenerator({
@@ -22,18 +21,17 @@ function sendEmail() {
             children: [
               {
                 tag: inputGenerator({
-                  id: "inputEmail",
+                  inputId: "inputEmail",
                   placeholder: "email",
                   type: "email",
                   fontSize: "medium",
                   size: "large",
                   statues: "mainInput",
-                  eventListeners: { blur: blurCheck },
                 }),
               },
               {
                 tag: inputGenerator({
-                  id: "inputSubject",
+                  inputId: "inputSubject",
                   placeholder: "subject",
                   type: "text",
                   fontSize: "medium",
@@ -44,7 +42,7 @@ function sendEmail() {
               },
               {
                 tag: inputGenerator({
-                  id: "inputMessage",
+                  inputId: "inputMessage",
                   placeholder: "message",
                   type: "text",
                   fontSize: "medium",
@@ -85,11 +83,12 @@ function sendEmail() {
       },
     ],
   });
-  function blurCheck() {
-    checkersEmail();
-  }
-
-
+  let inputEmail = document.getElementById("inputEmail");
+  let inputSubject = document.getElementById("inputSubject");
+  let inputMessage = document.getElementById("inputMessage");
+  // checkers(inputSubject);
+  // checkers(inputEmail);
+  // checkers(inputMessage);
 
   document.body.append(send);
 }
