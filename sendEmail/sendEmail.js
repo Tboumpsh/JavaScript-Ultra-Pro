@@ -1,7 +1,7 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import inputGenerator from "./components/inputComponent";
+import inputGenerator from "./components/inputComponents/inputComponent";
 
 function sendEmail() {
   let send = domGenerator({

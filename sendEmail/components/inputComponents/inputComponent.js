@@ -1,5 +1,5 @@
 import domGenerator from "dom-generator";
-import "../index.scss";
+import "./index.scss";
 
 function inputGenerator({
   inputId = "",
