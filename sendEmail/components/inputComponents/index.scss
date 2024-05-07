@@ -1,0 +1,92 @@
+.inputStyles {
+  &[data-size="medium"] {
+    width: 350px;
+    height: 56px;
+    border-radius: 2px;
+  }
+  &[data-size="large"] {
+    width: 485px;
+    height: 69px;
+    border-radius: 2px;
+  }
+  &[data-size="small"] {
+    width: 200px;
+    height: 43px;
+    border-radius: 2px;
+  }
+  &[data-fontSize="medium"] {
+    font-size: 20px;
+  }
+  &[data-fontSize="small"] {
+    font-size: 16px;
+  }
+  &[data-fontSize="large"] {
+    font-size: 24px;
+  }
+  &[data-status="mainInput"] {
+    background-color: transparent;
+    color: #222222;
+    border: none;
+    border-bottom: 4px solid rgba(141, 141, 141, 1);
+    text-align: center;
+    outline: none;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: 1s;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:focus,
+    &:active {
+      border-bottom: 4px solid rgba(51, 49, 49, 1);
+    }
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
+    }
+  }
+  &[data-status="checkedInput"] {
+    background-color: transparent;
+    color: #222222;
+    border-bottom: 4px solid rgba(20, 172, 35, 1);
+    text-align: center;
+    outline: none;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: 2s;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:focus,
+    &:active {
+      border-bottom: 4px solid rgba(20, 172, 35, 1);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
+    }
+  }
+  &[data-status="failedInput"] {
+    background-color: transparent;
+    color: #222222;
+    border-bottom: 4px solid rgb(223, 51, 45);
+    text-align: center;
+    outline: none;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: 2s;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:focus,
+    &:active {
+      border-bottom: 4px solid rgb(223, 51, 45);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
+    }
+  }
+}

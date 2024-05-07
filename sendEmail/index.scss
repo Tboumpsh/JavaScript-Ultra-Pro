@@ -1,0 +1,38 @@
+#section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 90vw;
+  height: 798px;
+  background-color: bisque;
+
+  #mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 798px;
+    background-color: pink;
+  }
+  #formValidation {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 55px;
+    width: 90%;
+    height: 700px;
+    background-color: aqua;
+    padding: 1% 2%;
+
+    #buttonsSection {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      width: 90%;
+      height: fit-content;
+    }
+  }
+}

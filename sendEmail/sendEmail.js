@@ -10,18 +10,54 @@ function sendEmail() {
     children: [
       {
         tag: "div",
-        attributes: { id: "parentDiv" },
-        children:[
-            {
-                tag:'form',
-                attributes:{id:'formValidation'},
-                children:[
-                    {
-                        tag:'input',
-                    }
-                ]
-            }
-        ]
+        attributes: { id: "mainDiv" },
+        children: [
+          {
+            tag: "form",
+            attributes: { id: "formValidation" },
+            children: [
+              {
+                tag: inputGenerator({
+                  id: "inputEmail",
+                  placeholder: "email",
+                  type: "email",
+                  fontSize: "medium",
+                  size: "large",
+                  statues: "mainInput",
+                }),
+              },
+              {
+                tag: inputGenerator({
+                  id: "inputSubject",
+                  placeholder: "subject",
+                  type: "text",
+                  fontSize: "medium",
+                  size: "large",
+                  statues: "mainInput",
+                }),
+              },
+              {
+                tag: inputGenerator({
+                  id: "inputMessage",
+                  placeholder: "message",
+                  type: "text",
+                  fontSize: "medium",
+                  size: "large",
+                  statues: "mainInput",
+                }),
+              },
+              {
+                tag:'div',
+                attributes:{id:'buttonsSection'},
+                // children:[
+                //   {
+
+                //   }
+                // ]
+              }
+            ],
+          },
+        ],
       },
     ],
   });
