@@ -28,6 +28,6 @@ function inputGenerator({
     button.disabled = true;
   }
 
-  document.body.append(input);
+  return input;
 }
 export default inputGenerator;
