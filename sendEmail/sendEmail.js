@@ -70,7 +70,7 @@ function sendEmail() {
                       content: "Refresh",
                       size: "medium",
                       statues: "Refresh",
-                      type: "button",
+                      type: "reset",
                       class: "buttonRefresh",
                       eventListeners: { click: RefreshEmails },
                     }),
@@ -86,9 +86,7 @@ function sendEmail() {
 
   window.addEventListener("DOMContentLoaded", startAction);
   function startAction() {}
-  // inputEmail.value = "";
-  // inputMessage.value = "";
-  // inputSubject.value = "";
+
   let count = 0;
 
   function checkEmail() {
