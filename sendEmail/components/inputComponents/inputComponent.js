@@ -1,6 +1,23 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+/**
+ * Generates an input element with the specified attributes and event listeners.
+ *
+ * @param {{
+ *   inputId: string,
+ *   inputClass: string,
+ *   placeholder: string,
+ *   type: string,
+ *   disabled: boolean,
+ *   eventListeners: object,
+ *   fontSize: string,
+ *   size: string,
+ *   statues: string,
+ * }} options - The options for the input element.
+ * @returns {HTMLInputElement} The generated input element.
+ */
+
 function inputGenerator({
   inputId = "",
   inputClass = "",
