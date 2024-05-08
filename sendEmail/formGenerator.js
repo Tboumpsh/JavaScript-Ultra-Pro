@@ -84,7 +84,7 @@ function formGenerator() {
     let type = inputEmail.type;
     if (type === "email") {
       if (inputEmail.value !== "") {
-        if (inputEmail.value.includes("@")) {
+        if (inputEmail.value.includes("@") && inputEmail.value.indexOf('.') !== -1) {
           inputEmail.setAttribute("data-status", "checkedInput");
           count++;
         } else {
