@@ -4,6 +4,11 @@ import "./index.scss";
 import buttonGenerator from "./components/buttonComponents/buttonComponent";
 import inputGenerator from "./components/inputComponents/inputComponent";
 
+/**
+ * Generates a form for sending an email.
+ *
+ * @returns {HTMLFormElement} The generated form element.
+ */
 function formGenerator() {
   let form = domGenerator({
     tag: "form",
@@ -89,6 +94,7 @@ function formGenerator() {
       } else {
         inputEmail.setAttribute("data-status", "failedInput");
         alert("Please enter your email");
+        count--;
       }
     }
   }
