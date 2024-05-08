@@ -35,6 +35,8 @@ function formGenerator() {
           size: "large",
           statues: "mainInput",
           eventListeners: { blur: checkSubject },
+          minLength: 2,
+          maxLength: 15,
         }),
       },
       {
@@ -46,6 +48,8 @@ function formGenerator() {
           size: "large",
           statues: "mainInput",
           eventListeners: { blur: checkMessage },
+          minLength: 1,
+          maxLength: 600,
         }),
       },
       {
@@ -84,7 +88,10 @@ function formGenerator() {
     let type = inputEmail.type;
     if (type === "email") {
       if (inputEmail.value !== "") {
-        if (inputEmail.value.includes("@") && inputEmail.value.indexOf('.') !== -1) {
+        if (
+          inputEmail.value.includes("@") &&
+          inputEmail.value.indexOf(".") !== -1
+        ) {
           inputEmail.setAttribute("data-status", "checkedInput");
           count++;
         } else {

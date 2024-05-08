@@ -28,6 +28,8 @@ function inputGenerator({
   fontSize = "medium",
   size = "medium",
   statues = "mainInput",
+  maiLength = 5,
+  maxLength = 30,
 }) {
   let input = domGenerator({
     tag: "input",
@@ -35,6 +37,8 @@ function inputGenerator({
       id: inputId,
       class: `inputStyles ${inputClass}`,
       placeholder: placeholder,
+      minLength: maiLength,
+      maxLength: maxLength,
     },
     dataAttributes: { size: size, status: statues, fontSize: fontSize },
     eventListeners,
