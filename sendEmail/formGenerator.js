@@ -79,6 +79,10 @@ function formGenerator() {
           },
         ],
       },
+      {
+        tag: "div",
+        attributes: { id: "loading" },
+      },
     ],
   });
 
@@ -149,9 +153,12 @@ function formGenerator() {
     }
   }
   function sendEmails() {
-    console.log(count);
     if (count == 3) {
-      alert("send");
+      let loading = document.getElementById("loading");
+      loading.setAttribute("data-status", "load");
+      setTimeout(() => {
+        loading.setAttribute("data-status", "send");
+      }, 3000);
     } else {
       silverBox({
         alertIcon: "error",
@@ -168,8 +175,13 @@ function formGenerator() {
     let inputSubject = document.getElementById("inputSubject");
     let inputEmail = document.getElementById("inputEmail");
     inputEmail.value = "";
+    inputEmail.setAttribute("data-status", "mainInput");
     inputSubject.value = "";
+    inputSubject.setAttribute("data-status", "mainInput");
     inputMessage.value = "";
+    inputMessage.setAttribute("data-status", "mainInput");
+    let loading = document.getElementById("loading");
+    loading.setAttribute("data-status", "default");
   }
   return form;
 }
