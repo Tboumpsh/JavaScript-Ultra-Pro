@@ -1,4 +1,5 @@
 import domGenerator from "dom-generator";
+import "./silverBox/silverBox.min.scss";
 import "./index.scss";
 
 import buttonGenerator from "./components/buttonComponents/buttonComponent";
@@ -100,8 +101,14 @@ function formGenerator() {
         }
       } else {
         inputEmail.setAttribute("data-status", "failedInput");
-        alert("Please enter your email");
         count--;
+        silverBox({
+          position: "top-right",
+          alertIcon: "info",
+          text: "Please enter your email address.",
+          centerContent: true,
+          showCloseButton: true,
+        });
       }
     }
   }
@@ -131,7 +138,13 @@ function formGenerator() {
       } else {
         inputMessage.setAttribute("data-status", "failedInput");
         count--;
-        alert("Please enter yor message");
+        silverBox({
+          position: "top-right",
+          alertIcon: "info",
+          text: "Please enter your message.",
+          centerContent: true,
+          showCloseButton: true,
+        });
       }
     }
   }
@@ -140,7 +153,14 @@ function formGenerator() {
     if (count == 3) {
       alert("send");
     } else {
-      alert("not send");
+      silverBox({
+        alertIcon: "error",
+        text: "Please check the entered information, you may not have a field wrong or filling out.",
+        centerContent: true,
+        cancelButton: {
+          text: "OK",
+        },
+      });
     }
   }
   function RefreshEmails() {

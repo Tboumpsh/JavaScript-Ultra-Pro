@@ -3,6 +3,7 @@ import temperatureConvert from "../convertCtoF/convert";
 import createColors from "../createColor/createColor";
 import changeColor from "../ChangeColor/changeColor";
 import gameChallenge from "../gameChalleng/game";
+import sendEmail from "../sendEmail/sendEmail";
 
 /**
  * Searches for and executes a JavaScript function based on the provided function name.
@@ -29,6 +30,9 @@ function findChallenge() {
     {
       name: "gameChallenge",
     },
+    {
+      name: "sendEmail",
+    },
   ];
   /**
    * Iterates over the array of function names and executes the function if a match is found.
@@ -52,6 +56,7 @@ function findChallenge() {
             createColors🖌️
             temperatureConvert🌡️
             gameChallenge🎮
+            sendEmail📧
             `);
 
   if (nameProject) {

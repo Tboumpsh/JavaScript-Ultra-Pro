@@ -1,5 +1,5 @@
-import findChallenge from "./src/findProject";
 import sendEmail from "./sendEmail/sendEmail";
+import findChallenge from "./src/findProject";
 
 /**
  * Initiates the process of finding and executing a JavaScript project.
