@@ -171,17 +171,7 @@ function formGenerator() {
     }
   }
   function RefreshEmails() {
-    let inputMessage = document.getElementById("inputMessage");
-    let inputSubject = document.getElementById("inputSubject");
-    let inputEmail = document.getElementById("inputEmail");
-    inputEmail.value = "";
-    inputEmail.setAttribute("data-status", "mainInput");
-    inputSubject.value = "";
-    inputSubject.setAttribute("data-status", "mainInput");
-    inputMessage.value = "";
-    inputMessage.setAttribute("data-status", "mainInput");
-    let loading = document.getElementById("loading");
-    loading.setAttribute("data-status", "default");
+    history.go(0);
   }
   return form;
 }
