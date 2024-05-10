@@ -171,7 +171,10 @@ function formGenerator() {
     }
   }
   function RefreshEmails() {
-    history.go(0);
+    // history.go(0);
+    let form = document.getElementById("formValidation");
+    form.reset();
+    count = -3;
   }
   return form;
 }
