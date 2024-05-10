@@ -174,7 +174,7 @@ function formGenerator() {
     // history.go(0);
     let form = document.getElementById("formValidation");
     form.reset();
-    count = -3;
+    count = 0;
   }
   return form;
 }
