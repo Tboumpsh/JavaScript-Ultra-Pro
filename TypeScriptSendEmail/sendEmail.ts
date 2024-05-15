@@ -13,23 +13,24 @@ function sendEmailType() {
       {
         tag: "h1",
         properties: { textContent: "SignIn and SignUp" },
+        attributes: { id: "headerSection" },
       },
       {
         tag: "form",
-        attributes: { id: "formValidation" },
+        attributes: { id: "typeForm" },
         eventListeners: { submit: (e) => e.preventDefault() },
         children: [
           {
             tag: "input",
-            attributes: { id: "inputText", type: "text" },
+            attributes: { id: "inputText", type: "text" , placeholder:'Input massage' },
           },
           {
             tag: "input",
-            attributes: { id: "inputEmail", type: "email" },
+            attributes: { id: "inputEmail", type: "email" , placeholder:'Input Email'},
           },
           {
             tag: "input",
-            attributes: { id: "inputPassword", type: "password" },
+            attributes: { id: "inputPassword", type: "password", placeholder:'Input password' },
           },
           {
             tag: "input",
