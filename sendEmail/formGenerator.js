@@ -86,7 +86,24 @@ function formGenerator() {
       },
     ],
   });
-
+  /**
+   * checkEmail function to validate an email input and update its status.
+   *
+   * This function performs the following actions:
+   * 1. Retrieves the input element with the id "inputEmail".
+   * 2. Checks the type of the input element.
+   * 3. If the type is "email", it performs the following checks:
+   *    - If the input's value is non-empty and contains "@" and a dot ("."):
+   *        - Sets the "data-status" attribute to "checkedInput" and adds the "check" class to the input element.
+   *    - If the input's value is non-empty but fails the email format check:
+   *        - Sets the "data-status" attribute to "failedInput".
+   *    - If the input's value is empty:
+   *        - Sets the "data-status" attribute to "failedInput" and triggers an alert using the silverBox function with a specified message.
+   *
+   * @function checkEmail
+   * @global
+   * @example
+   */
   function checkEmail() {
     let inputEmail = document.getElementById("inputEmail");
     let type = inputEmail.type;
@@ -113,7 +130,20 @@ function formGenerator() {
       }
     }
   }
-
+  /**
+   * checkSubject function to validate an input subject and update its status.
+   *
+   * This function performs the following actions:
+   * 1. Retrieves the input element with the id "inputSubject".
+   * 2. Checks the type of the input element.
+   * 3. If the type is "text", it checks if the input's value is non-empty:
+   *    - If the input's value is non-empty, it sets the "data-status" attribute to "checkedInput" and adds the "check" class to the input element.
+   *    - If the input's value is empty, it sets the "data-status" attribute to "failedInput" and changes the input's value to "undefined".
+   *
+   * @function checkSubject
+   * @global
+   * @example
+   */
   function checkSubject() {
     let inputSubject = document.getElementById("inputSubject");
     let type = inputSubject.type;
@@ -127,7 +157,20 @@ function formGenerator() {
       }
     }
   }
-
+  /**
+   * checkMessage function to validate an input message and update its status.
+   *
+   * This function performs the following actions:
+   * 1. Retrieves the input element with the id "inputMessage".
+   * 2. Checks the type of the input element.
+   * 3. If the type is "text", it checks if the input's value is non-empty:
+   *    - If the input's value is non-empty, it sets the "data-status" attribute to "checkedInput" and adds the "check" class to the input element.
+   *    - If the input's value is empty, it sets the "data-status" attribute to "failedInput" and triggers an alert using the silverBox function with a specified message.
+   *
+   * @function checkMessage
+   * @global Specifies that this function affects the global scope.
+   * @example
+   */
   function checkMessage() {
     let inputMessage = document.getElementById("inputMessage");
     let type = inputMessage.type;
@@ -147,6 +190,22 @@ function formGenerator() {
       }
     }
   }
+  /**
+   * sendEmails function to validate input fields and simulate sending emails.
+   *
+   * This function performs the following actions:
+   * 1. Retrieves all input elements and elements with the class "check".
+   * 2. If the number of elements with the class "check" is equal to the number of input elements minus one,
+   *    it changes the "data-status" attribute of the element with id "loading" to "load",
+   *    then to "send" after 3 seconds, and finally to "default" after 7 seconds,
+   *    followed by calling the RefreshEmails function.
+   * 3. If the validation fails, it triggers an alert using the silverBox function
+   *    with a specified error message.
+   *
+   * @function sendEmails
+   * @global
+   * @example
+   */
   function sendEmails() {
     let inputs = document.getElementsByTagName("input");
     let check = document.getElementsByClassName("check");
