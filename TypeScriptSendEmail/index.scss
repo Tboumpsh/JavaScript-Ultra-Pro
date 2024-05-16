@@ -12,6 +12,10 @@
   outline: none;
   text-align: center;
 }
+@mixin inputHover() {
+  transform: scale(1.1);
+  transition: transform 1s ease-in-out;
+}
 
 #parentSection {
   width: 100vw;
@@ -24,26 +28,35 @@
 
   #headerSection {
     font-size: 50px;
-    color: rgb(6, 1, 46)
+    color: rgb(6, 1, 46);
   }
 
   #typeForm {
     @include display;
     flex-direction: column;
-    width: 70%;
-    height: 70vh;
+    width: 55%;
+    height: 71vh;
     gap: 40px;
     background-color: rgba(255, 255, 255, 0.233);
-   border-radius: 20px;
+    border-radius: 20px;
 
     #inputText {
       @include inputSize;
+      &:hover {
+        @include inputHover;
+      }
     }
     #inputEmail {
       @include inputSize;
+      &:hover {
+        @include inputHover;
+      }
     }
     #inputPassword {
       @include inputSize;
+      &:hover {
+        @include inputHover;
+      }
     }
     #submit {
       width: 40%;
@@ -51,6 +64,55 @@
       border-radius: 15px;
       border: none;
       outline: none;
+      background-color: rgb(8, 5, 32);
+      color: white;
+
+      &:hover {
+        background-color: rgba(8, 5, 32, 0.475);
+        border: 1.5px solid rgb(8, 5, 32);
+        color: rgb(8, 5, 32);
+        font-weight: 600;
+      }
+      &:active {
+        background-color: rgb(16, 120, 4);
+        border: none;
+        color: rgb(235, 234, 236);
+        font-weight: 600;
+      }
+    }
+  }
+  .checked {
+    animation-name: heart;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    color: rgb(7, 164, 39) !important;
+    background-color: rgb(183, 248, 225) !important;
+
+    @keyframes heart {
+      10% {
+        transform: scale(1.1);
+      }
+      30% {
+        transform: scale(1);
+      }
+    }
+  }
+  .error {
+    animation-name: viber;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    background-color: rgb(241, 194, 164) !important;
+
+    @keyframes viber {
+      10% {
+        transform: translateX(20px);
+      }
+      30% {
+        transform: translateX(-20px);
+      }
+      50% {
+        transform: translateX(0);
+      }
     }
   }
 }
