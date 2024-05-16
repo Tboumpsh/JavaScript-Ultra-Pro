@@ -1,6 +1,9 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import emailValidation from "./emailValidation";
+import checkLength from "./checkLength";
+
 /**
  * Generates and appends a form to the document body for sending an email.
  *  @returns {void}
@@ -27,7 +30,7 @@ function sendEmailType() {
               type: "text",
               placeholder: "Input massage",
             },
-            eventListeners: { blur: checkTexts },
+            eventListeners: { blur: checkInputValidation },
           },
           {
             tag: "input",
@@ -36,7 +39,7 @@ function sendEmailType() {
               type: "email",
               placeholder: "Input Email",
             },
-            eventListeners: { blur: checkEmail },
+            eventListeners: { blur: checkInputValidation },
           },
           {
             tag: "input",
@@ -45,7 +48,7 @@ function sendEmailType() {
               type: "password",
               placeholder: "Input password",
             },
-            eventListeners: { blur: checkPassword },
+            eventListeners: { blur: checkInputValidation },
           },
           {
             tag: "input",
@@ -56,23 +59,27 @@ function sendEmailType() {
     ],
   });
 
-  function checkTexts() {
-    let text: any = document.getElementById("inputText");
-    console.log(text);
+  document.addEventListener("DOMContentLoaded", renderPage);
+  // dom content loaded
+  function renderPage() {
+    mainFunction();
   }
-  checkTexts();
+  //   main function
+  function mainFunction() {
+    checkInputValidation();
+  }
+  //   blur function
+  function checkInputValidation(this): void {
+    let text = document.getElementById("inputText");
+    let password = document.getElementById("inputPassword");
+    let gmail = document.getElementById("inputEmail");
 
-  function checkEmail() {
-    let gmail: any = document.getElementById("inputEmail");
-    console.log(gmail);
-  }
-  checkEmail();
+    checkLength(text);
+    checkLength(password);
 
-  function checkPassword() {
-    let password: any = document.getElementById("inputPassword");
-    console.log(password);
+    emailValidation(gmail);
+    checkLength(gmail);
   }
-  checkPassword();
 
   document.body.append(email);
 }
