@@ -63,16 +63,42 @@ function sendEmailType() {
   });
 
   document.addEventListener("DOMContentLoaded", renderPage);
-  // dom content loaded
+  /**
+   * Initializes the page once the DOM content is fully loaded.
+   *
+   * This function is called when the DOMContentLoaded event is fired, ensuring that the DOM is fully parsed and ready for manipulation. It calls the `mainFunction` to perform the primary actions required for rendering the page.
+   *
+   * @function renderPage
+   * @returns {void}
+   * @example
+   * document.addEventListener("DOMContentLoaded", renderPage);
+   */
   function renderPage() {
     mainFunction();
   }
-  //   main function
-  function mainFunction() {
+  /**
+   * Main function to initiate the validation of input fields.
+   *
+   * This function is responsible for starting the validation process of input fields on the page.
+   * It calls the `checkInputValidation` function, which contains the logic for validating the inputs.
+   *
+   * @function mainFunction
+   * @returns {void}
+   */
+  function mainFunction(): void {
     checkInputValidation();
   }
-  //   blur function
-
+  /**
+   * Validates various input fields on the page.
+   *
+   * This function retrieves specific input elements by their IDs and performs validation on each:
+   * - It checks the length of the text and password inputs to ensure they are not empty.
+   * - It validates the email input for a valid email format.
+   * - It also checks the length of the email input to ensure it is not empty.
+   *
+   * @function checkInputValidation
+   * @returns {void}
+   */
   function checkInputValidation(): void {
     let text: any = document.getElementById("inputText");
     let password: any = document.getElementById("inputPassword");
@@ -83,7 +109,18 @@ function sendEmailType() {
     emailValidation(gmail);
     checkLength(gmail);
   }
-  // send button
+  /**
+   * Handles the action when the send button is clicked.
+   *
+   * This function checks for the presence of any error elements on the page.
+   * If no error elements are found, it calls the `changeButton` function to update the button's appearance.
+   * If error elements are found, it displays a confirmation message urging the user to check and fill out the fields correctly.
+   *
+   * @function sendButton
+   * @returns {void}
+   * @example
+   * sendButton();
+   */
   function sendButton(): void {
     let error = document.getElementsByClassName("error");
     if (error.length === 0) {
