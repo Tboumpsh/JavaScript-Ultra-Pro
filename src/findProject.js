@@ -1,4 +1,5 @@
 import changeColorOrder from "../DiscoloredInOrder/DiscoloredOrder";
+import sendEmailType from "../TypeScriptSendEmail/sendEmail";
 import temperatureConvert from "../convertCtoF/convert";
 import createColors from "../createColor/createColor";
 import changeColor from "../ChangeColor/changeColor";
@@ -33,6 +34,9 @@ function findChallenge() {
     {
       name: "sendEmail",
     },
+    {
+      name: "sendEmailType",
+    },
   ];
   /**
    * Iterates over the array of function names and executes the function if a match is found.
@@ -57,6 +61,7 @@ function findChallenge() {
             temperatureConvert🌡️
             gameChallenge🎮
             sendEmail📧
+            sendEmailTypeScript📩
             `);
 
   if (nameProject) {
