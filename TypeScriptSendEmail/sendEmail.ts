@@ -2,6 +2,7 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import emailValidation from "./emailValidation";
+import changeButton from "./sendButton";
 import checkLength from "./checkLength";
 
 /**
@@ -51,8 +52,9 @@ function sendEmailType() {
             eventListeners: { blur: checkInputValidation },
           },
           {
-            tag: "input",
-            attributes: { id: "submit", type: "submit" },
+            tag: "button",
+            attributes: { id: "submit" },
+            properties: { textContent: "DOM-Generator" },
             eventListeners: { click: sendButton },
           },
         ],
@@ -72,10 +74,9 @@ function sendEmailType() {
   //   blur function
 
   function checkInputValidation(): void {
-    let text = document.getElementById("inputText");
-    let password = document.getElementById("inputPassword");
-    let gmail = document.getElementById("inputEmail");
-    let paragraph: any = document.getElementById("paragraph");
+    let text: any = document.getElementById("inputText");
+    let password: any = document.getElementById("inputPassword");
+    let gmail: any = document.getElementById("inputEmail");
 
     checkLength(text);
     checkLength(password);
@@ -83,13 +84,14 @@ function sendEmailType() {
     checkLength(gmail);
   }
   // send button
-  function sendButton() {
-    let send: any = document.getElementById("submit");
+  function sendButton(): void {
     let error = document.getElementsByClassName("error");
     if (error.length === 0) {
-      alert("send");
+      changeButton();
     } else {
-      alert("no send");
+      confirm(
+        "Dear friend, I see an error, please check the fields and make sure they are correct and filled."
+      );
     }
   }
 
