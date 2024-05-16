@@ -53,6 +53,7 @@ function sendEmailType() {
           {
             tag: "input",
             attributes: { id: "submit", type: "submit" },
+            eventListeners: { click: sendButton },
           },
         ],
       },
@@ -69,16 +70,27 @@ function sendEmailType() {
     checkInputValidation();
   }
   //   blur function
-  function checkInputValidation(this): void {
+
+  function checkInputValidation(): void {
     let text = document.getElementById("inputText");
     let password = document.getElementById("inputPassword");
     let gmail = document.getElementById("inputEmail");
+    let paragraph: any = document.getElementById("paragraph");
 
     checkLength(text);
     checkLength(password);
-
     emailValidation(gmail);
     checkLength(gmail);
+  }
+  // send button
+  function sendButton() {
+    let send: any = document.getElementById("submit");
+    let error = document.getElementsByClassName("error");
+    if (error.length === 0) {
+      alert("send");
+    } else {
+      alert("no send");
+    }
   }
 
   document.body.append(email);
