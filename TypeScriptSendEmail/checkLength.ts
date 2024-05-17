@@ -14,21 +14,10 @@ import failed from "./helpers/failedValidation";
  */
 
 function checkLength(input: any): void {
+  console.log(input.value);
   if (input.value.length > 0) {
-    /**
-     * Marks the input as successful.
-     *
-     * @param {HTMLInputElement} input - The input element to be marked as successful.
-     * @returns {void}
-     */
     success(input);
   } else {
-    /**
-     * Marks the input as failed.
-     *
-     * @param {HTMLInputElement} input - The input element to be marked as failed.
-     * @returns {void}
-     */
     failed(input);
   }
 }
