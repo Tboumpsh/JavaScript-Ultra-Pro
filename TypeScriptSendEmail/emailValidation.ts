@@ -14,11 +14,11 @@ import failed from "./helpers/failedValidation";
  * @returns {void}
  */
 
-function emailValidation(input: any): void {
+function emailValidation(input: HTMLInputElement): void {
   if (
     input.value.includes("@") &&
-    input.value.indexOf(".") !== -1 &&
-    input.value.indexOf("com") !== -1
+    input.value.includes(".") &&
+    input.value.includes("com")
   ) {
     success(input);
   } else {
