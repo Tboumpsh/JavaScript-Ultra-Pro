@@ -1,6 +1,8 @@
+import "../src/Lib/silverBox/silverBox.min.scss";
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import silverBox from "../src/Lib/silverBox/silverBox.min.js";
 import emailValidation from "./emailValidation";
 import changeButton from "./sendButton";
 import checkLength from "./checkLength";
@@ -54,7 +56,7 @@ function sendEmailType() {
           {
             tag: "button",
             attributes: { id: "submit" },
-            properties: { textContent: "DOM-Generator" },
+            properties: { textContent: "Send" },
             eventListeners: { click: sendButton },
           },
         ],
@@ -62,32 +64,6 @@ function sendEmailType() {
     ],
   });
 
-  document.addEventListener("DOMContentLoaded", renderPage);
-  /**
-   * Initializes the page once the DOM content is fully loaded.
-   *
-   * This function is called when the DOMContentLoaded event is fired, ensuring that the DOM is fully parsed and ready for manipulation. It calls the `mainFunction` to perform the primary actions required for rendering the page.
-   *
-   * @function renderPage
-   * @returns {void}
-   * @example
-   * document.addEventListener("DOMContentLoaded", renderPage);
-   */
-  function renderPage() {
-    mainFunction();
-  }
-  /**
-   * Main function to initiate the validation of input fields.
-   *
-   * This function is responsible for starting the validation process of input fields on the page.
-   * It calls the `checkInputValidation` function, which contains the logic for validating the inputs.
-   *
-   * @function mainFunction
-   * @returns {void}
-   */
-  function mainFunction(): void {
-    checkInputValidation();
-  }
   /**
    * Validates various input fields on the page.
    *
@@ -99,15 +75,14 @@ function sendEmailType() {
    * @function checkInputValidation
    * @returns {void}
    */
-  function checkInputValidation(): void {
-    let text: any = document.getElementById("inputText");
-    let password: any = document.getElementById("inputPassword");
-    let gmail: any = document.getElementById("inputEmail");
+  function checkInputValidation(e): void {
+    let findTarget = {
+      inputText: () => checkLength(e.target),
+      inputPassword: () => checkLength(e.target),
+      inputEmail: () => emailValidation(e.target),
+    };
 
-    checkLength(text);
-    checkLength(password);
-    emailValidation(gmail);
-    checkLength(gmail);
+    findTarget[e.target.id]();
   }
   /**
    * Handles the action when the send button is clicked.
@@ -122,13 +97,21 @@ function sendEmailType() {
    * sendButton();
    */
   function sendButton(): void {
-    let error = document.getElementsByClassName("error");
-    if (error.length === 0) {
+    let error = document.getElementsByClassName("checked");
+    let input = document.getElementsByTagName("input");
+    if (error.length == input.length - 1) {
       changeButton();
     } else {
       confirm(
         "Dear friend, I see an error, please check the fields and make sure they are correct and filled."
       );
+      silverBox({
+        position: "top-right",
+        alertIcon: "info",
+        text: "Please enter your message.",
+        centerContent: true,
+        showCloseButton: true,
+      });
     }
   }
 
