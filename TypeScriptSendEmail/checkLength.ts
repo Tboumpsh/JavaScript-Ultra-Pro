@@ -14,7 +14,6 @@ import failed from "./helpers/failedValidation";
  */
 
 function checkLength(input: any): void {
-  console.log(input.value);
   if (input.value.length > 0) {
     success(input);
   } else {
