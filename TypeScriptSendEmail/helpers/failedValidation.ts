@@ -8,8 +8,7 @@
  * @param {HTMLElement} input - The input element to be marked as failed.
  * @returns {void}
  */
-
-function failed(input: any): void {
+function failed(input: HTMLInputElement): void {
     input.setAttribute("class", "error");
   }
   export default failed

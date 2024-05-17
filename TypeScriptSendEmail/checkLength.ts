@@ -13,7 +13,7 @@ import failed from "./helpers/failedValidation";
  * @returns {void}
  */
 
-function checkLength(input: any): void {
+function checkLength(input: HTMLInputElement): void {
   if (input.value.length > 0) {
     success(input);
   } else {

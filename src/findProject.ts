@@ -38,7 +38,7 @@ function findChallenge() {
    * @param {string} funcName - The name of the function to search for and execute.
    * @returns {void}
    */
-  function find(funcName) {
+  function find(funcName):void {
     if (Object.keys(array).includes(funcName)) {
       array[funcName]();
     } else {
@@ -58,7 +58,7 @@ function findChallenge() {
    * @type {string}
    */
 
-  let promtString = "Which project do you want:(Enter the project name⚠️ \n";
+  let promtString:string = "Which project do you want:(Enter the project name⚠️ \n";
   Object.keys(array).forEach((item) => {
     promtString += item + "\n";
   });

@@ -98,7 +98,7 @@ function sendEmailType() {
    */
   function sendButton(): void {
     let error = document.getElementsByClassName("checked");
-    let input = document.getElementsByTagName("input");
+    let input = document.getElementsByTagName("input") ;
     if (error.length == input.length - 1) {
       changeButton();
     } else {
