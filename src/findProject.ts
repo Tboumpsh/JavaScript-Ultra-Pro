@@ -1,7 +1,10 @@
+import "./Lib/silverBox/silverBox.min.scss";
+
 import changeColorOrder from "../DiscoloredInOrder/DiscoloredOrder";
 import sendEmailType from "../TypeScriptSendEmail/sendEmail";
 import temperatureConvert from "../convertCtoF/convert";
 import createColors from "../createColor/createColor";
+import silverBox from "./Lib/silverBox/silverBox.min";
 import changeColor from "../ChangeColor/changeColor";
 import gameChallenge from "../gameChalleng/game";
 import sendEmail from "../sendEmail/sendEmail";
@@ -39,7 +42,15 @@ function findChallenge() {
     if (Object.keys(array).includes(funcName)) {
       array[funcName]();
     } else {
-      confirm("No function found with that name.");
+      document.body.style.backgroundColor = "red";
+      silverBox({
+        alertIcon: "info",
+        text: "Please try again, maybe you entered the wrong project name.",
+        centerContent: true,
+        cancelButton: {
+          text: "OK",
+        },
+      });
     }
   }
   /**
