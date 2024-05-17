@@ -15,54 +15,43 @@ function findChallenge() {
    * An array containing objects with the names of JavaScript functions.
    * @type {Array<Object>}
    */
-  let array = [
-    {
-      name: "changeColor",
-    },
-    {
-      name: "changeColorOrder",
-    },
-    {
-      name: "createColors",
-    },
-    {
-      name: "temperatureConvert",
-    },
-    {
-      name: "gameChallenge",
-    },
-    {
-      name: "sendEmail",
-    },
-    {
-      name: "sendEmailType",
-    },
-  ];
+  let array = {
+    changeColor: () => changeColor(),
+
+    changeColorOrder: () => changeColorOrder(),
+
+    createColors: () => createColors(),
+
+    temperatureConvert: () => temperatureConvert(),
+
+    gameChallenge: () => gameChallenge(),
+
+    sendEmail: () => sendEmail(),
+
+    sendEmailType: () => sendEmailType(),
+  };
   /**
    * Iterates over the array of function names and executes the function if a match is found.
    * @param {string} funcName - The name of the function to search for and execute.
    * @returns {void}
    */
   function find(funcName) {
-    array.forEach((item) => {
-      if (item.name === funcName) {
-        eval(item.name + "()");
-      }
-    });
+    if (Object.keys(array).includes(funcName)) {
+      array[funcName]();
+    } else {
+      confirm("No function found with that name.");
+    }
   }
   /**
    * Prompts the user to enter the name of the project they want to execute.
    * @type {string}
    */
-  let nameProject = prompt(`Which project do you want:(Enter the project name⚠️)
-            changeColor🎨
-            changeColorOrder🎭
-            createColors🖌️
-            temperatureConvert🌡️
-            gameChallenge🎮
-            sendEmail📧
-            sendEmailTypeScript📩
-            `);
+
+  let promtString = "Which project do you want:(Enter the project name⚠️ \n";
+  Object.keys(array).forEach((item) => {
+    promtString += item + "\n";
+  });
+  let nameProject = prompt(promtString);
 
   if (nameProject) {
     find(nameProject);
