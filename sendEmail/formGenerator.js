@@ -1,5 +1,5 @@
+import "../src/Lib/silverBox/silverBox.min.scss";
 import domGenerator from "dom-generator";
-import "./silverBox/silverBox.min.scss";
 import "./index.scss";
 
 import buttonGenerator from "./components/buttonComponents/buttonComponent";
