@@ -102,16 +102,13 @@ function sendEmailType() {
     if (error.length == input.length - 1) {
       changeButton();
     } else {
-      confirm(
-        "Dear friend, I see an error, please check the fields and make sure they are correct and filled."
-      );
       silverBox({
-        position: "top-right",
         alertIcon: "info",
-        text: "Please enter your message.",
+        theme: "dark",
+        text: "Dear friend, I see an error, please check the fields and make sure they are correct and filled.",
         centerContent: true,
-        showCloseButton: true,
-      });
+        showCloseButton: true
+ })
     }
   }
 
