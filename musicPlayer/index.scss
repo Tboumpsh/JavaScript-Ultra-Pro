@@ -1,0 +1,25 @@
+@mixin display() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#appPlayer {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+  @include display;
+  background-image: url("../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+  #CardMusicPlayer {
+    width: 45%;
+    height: 700px;
+    background-color:rgb(4 9 1 / 96%);;
+    padding: 1%;
+    border-radius: 15px;
+  
+  }
+}
