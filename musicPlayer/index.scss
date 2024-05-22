@@ -12,14 +12,18 @@
   background-image: url("../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  
 
-  #CardMusicPlayer {
-    width: 45%;
-    height: 700px;
-    background-color:rgb(4 9 1 / 96%);;
+  .CardMusicPlayer {
     padding: 1%;
-    border-radius: 15px;
-  
+    @include display;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    #musicController {
+      width: 50%;
+      @include display;
+      justify-content: center;
+      gap: 10px;
+    }
   }
 }
