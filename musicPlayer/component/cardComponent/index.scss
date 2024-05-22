@@ -1,0 +1,69 @@
+.cardComponentWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  // max with
+  img {
+    max-width: 558px;
+    max-height: 500px;
+    border-radius: 15px;
+  }
+  .cardComponent {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &[data-size="medium"] {
+    width: 39%;
+    height: 600px;
+    border-radius: 15px;
+  }
+  &[data-size="large"] {
+    width: 40%;
+    height: 700px;
+    border-radius: 15px;
+  }
+  &[data-size="small"] {
+    width: 30%;
+    height: 500px;
+    border-radius: 15px;
+  }
+  &[data-size="extraSmall"] {
+    width: 25%;
+    height: 400px;
+    border-radius: 15px;
+  }
+  &[data-size="extraLarge"] {
+    width: 50%;
+    height: 700px;
+    border-radius: 15px;
+  }
+  &[data-status="primary"] {
+    background-color: rgba(4, 9, 1, 0.96);
+    color: rgb(232, 107, 12);
+    text-align: center;
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+  &[data-status="scend"] {
+    background-color: rgba(4, 9, 1, 0.96);
+
+    &:hover {
+      background-color: rgb(4, 9, 1);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+
+  &[data-status="possible"] {
+    background-color: rgb(232, 107, 12);
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+}
