@@ -1,0 +1,30 @@
+@mixin display() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#backgroundGame {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/images/RockPaperScissors/game.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include display;
+  align-items: baseline;
+
+  #buttonsGroup {
+    background-color: #fffd74;
+    border: 3px solid #ffee00;
+    padding: 1%;
+    border-radius: 10px;
+    width: 20%;
+    @include display;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 5%;
+  }
+  #Scores{
+    font-size: 25px;
+  }
+}
