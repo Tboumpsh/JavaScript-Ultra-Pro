@@ -1,5 +1,6 @@
 import "./Lib/silverBox/silverBox.min.scss";
 
+import rockPaperScissorsGame from "../RockPaperScissors/RockPaperScissors";
 import changeColorOrder from "../DiscoloredInOrder/DiscoloredOrder";
 import sendEmailType from "../TypeScriptSendEmail/sendEmail";
 import musicPlayerPlatform from "../musicPlayer/musicPlayer";
@@ -21,19 +22,14 @@ function findChallenge() {
    */
   let array = {
     changeColor: () => changeColor(),
-
     changeColorOrder: () => changeColorOrder(),
-
     createColors: () => createColors(),
-
     temperatureConvert: () => temperatureConvert(),
-
     gameChallenge: () => gameChallenge(),
-
     sendEmail: () => sendEmail(),
-
     sendEmailType: () => sendEmailType(),
     musicPlayerPlatform: () => musicPlayerPlatform(),
+    rockPaperScissorsGame: () => rockPaperScissorsGame(),
   };
   /**
    * Iterates over the array of function names and executes the function if a match is found.
