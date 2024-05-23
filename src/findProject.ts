@@ -2,6 +2,7 @@ import "./Lib/silverBox/silverBox.min.scss";
 
 import changeColorOrder from "../DiscoloredInOrder/DiscoloredOrder";
 import sendEmailType from "../TypeScriptSendEmail/sendEmail";
+import musicPlayerPlatform from "../musicPlayer/musicPlayer";
 import temperatureConvert from "../convertCtoF/convert";
 import createColors from "../createColor/createColor";
 import silverBox from "./Lib/silverBox/silverBox.min";
@@ -32,13 +33,14 @@ function findChallenge() {
     sendEmail: () => sendEmail(),
 
     sendEmailType: () => sendEmailType(),
+    musicPlayerPlatform: () => musicPlayerPlatform(),
   };
   /**
    * Iterates over the array of function names and executes the function if a match is found.
    * @param {string} funcName - The name of the function to search for and execute.
    * @returns {void}
    */
-  function find(funcName):void {
+  function find(funcName): void {
     if (Object.keys(array).includes(funcName)) {
       array[funcName]();
     } else {
@@ -58,7 +60,8 @@ function findChallenge() {
    * @type {string}
    */
 
-  let promtString:string = "Which project do you want:(Enter the project name⚠️ \n";
+  let promtString: string =
+    "Which project do you want:(Enter the project name⚠️ \n";
   Object.keys(array).forEach((item) => {
     promtString += item + "\n";
   });
