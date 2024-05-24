@@ -1,9 +1,19 @@
 import domGenerator from "dom-generator";
+import axios from "axios";
 import "./index.scss";
 
 import cardGenerator from "./component/cardComponentWeathers/weathersCard";
 
-function weathersWebApplication() {
+let weathersData;
+async function weathersWebApplication() {
+  let question = prompt("which city?");
+  try {
+    weathersData = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${question}&appid=ebe61a099aba6dca4efcb2c23c229df9&units=metric`
+    );
+  } catch (error) {
+    alert(error);
+  }
   let weathers = domGenerator({
     tag: "div",
     attributes: { id: "weathersSection" },
@@ -15,7 +25,7 @@ function weathersWebApplication() {
           {
             tag: "h1",
             properties: {
-              textContent: "A week -long weather in Bushehr province",
+              textContent: "A week -long weather in Cites province",
             },
             attributes: { id: "titleWeathersCard" },
           },
@@ -24,73 +34,14 @@ function weathersWebApplication() {
             attributes: { id: "gridWeathers" },
             children: [
               {
-                tag: cardGenerator({
+                tag:   cardGenerator({
                   size: "extraLarge",
                   status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
-                }),
-              },
-              {
-                tag: cardGenerator({
-                  size: "extraLarge",
-                  status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
-                }),
-              },
-              {
-                tag: cardGenerator({
-                  size: "extraLarge",
-                  status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
-                }),
-              },
-              {
-                tag: cardGenerator({
-                  size: "extraLarge",
-                  status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
-                }),
-              },
-              {
-                tag: cardGenerator({
-                  size: "extraLarge",
-                  status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
-                }),
-              },
-              {
-                tag: cardGenerator({
-                  size: "extraLarge",
-                  status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
-                }),
-              },
-              {
-                tag: cardGenerator({
-                  size: "extraLarge",
-                  status: "primary",
-                  upImage:
-                    "../public/images/musicPlayer/danny-howe-bn-D2bCvpik-unsplash.jpg",
-                  title: "pppp",
-                  pgraph: "sdfcsfvwsarvgewage5grw",
+                  upImage: "https://unsplash.com/photos/multicolored-painting-YXQew2KZjzY?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+                  title: weathersData.data.name,
+                  pgraph: weathersData.data.main.temp,
+                  //   weathersData.data.main.temp
+                  // weathersData.data.name
                 }),
               },
             ],
@@ -99,7 +50,7 @@ function weathersWebApplication() {
       },
     ],
   });
-
+  
   document.body.append(weathers);
 }
 export default weathersWebApplication;
