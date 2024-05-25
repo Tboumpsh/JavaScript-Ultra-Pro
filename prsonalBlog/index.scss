@@ -102,11 +102,44 @@
     background-color: rgb(47, 0, 70);
     color: white;
   }
+  #close{
+    align-self: flex-start;
+    margin: 2%;
+    background-color:rgb(215 215 215);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 30px;
+  }
 }
 
 #cardParent {
   width: 30%;
   height: 350px;
-  background-color: floralwhite;
+  background-color: rgb(235, 204, 250);
   border-radius: 15px;
+  position: absolute;
+  left: 2%;
+  top: 10%;
+  overflow: auto;
+  @include display;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  #titlePost {
+    width: 90%;
+    font-size: 40px;
+    text-align: center;
+    border: 1px solid rgb(11, 0, 16);
+  }
+
+  #bodyPost{
+    width: 90%;
+    height: max-content;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid rgb(11, 0, 16);
+  }
 }
