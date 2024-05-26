@@ -5,6 +5,8 @@ import changeColorOrder from "../DiscoloredInOrder/DiscoloredOrder";
 import sendEmailType from "../TypeScriptSendEmail/sendEmail";
 import musicPlayerPlatform from "../musicPlayer/musicPlayer";
 import temperatureConvert from "../convertCtoF/convert";
+import weathersWebApplication from "../weather/weather";
+import personalBlog from "../prsonalBlog/personalBlog";
 import createColors from "../createColor/createColor";
 import silverBox from "./Lib/silverBox/silverBox.min";
 import changeColor from "../ChangeColor/changeColor";
@@ -30,6 +32,8 @@ function findChallenge() {
     sendEmailType: () => sendEmailType(),
     musicPlayerPlatform: () => musicPlayerPlatform(),
     rockPaperScissorsGame: () => rockPaperScissorsGame(),
+    personalBlog: () => personalBlog(),
+    weathersWebApplication: () => weathersWebApplication,
   };
   /**
    * Iterates over the array of function names and executes the function if a match is found.
