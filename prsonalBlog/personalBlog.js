@@ -24,6 +24,10 @@ function personalBlog() {
         ],
       },
       {
+        tag: "section",
+        attributes: { id: "cardSection" },
+      },
+      {
         tag: "button",
         attributes: { id: "floatButtons" },
         properties: { textContent: "+" },
@@ -31,6 +35,7 @@ function personalBlog() {
       },
     ],
   });
+
   function showSettingForm() {
     settingCards();
   }
