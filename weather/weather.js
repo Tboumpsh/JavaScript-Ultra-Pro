@@ -6,7 +6,7 @@ import cardGenerator from "./component/cardComponentWeathers/weathersCard";
 
 let weathersData;
 async function weathersWebApplication() {
-  let question = prompt("which city?");
+  let question = prompt("Type the name of your desired city in Iran.");
   try {
     weathersData = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${question}&appid=ebe61a099aba6dca4efcb2c23c229df9&units=metric`
@@ -25,7 +25,7 @@ async function weathersWebApplication() {
           {
             tag: "h1",
             properties: {
-              textContent: "A week -long weather in Cites province",
+              textContent: "Temperature of Iranian cities",
             },
             attributes: { id: "titleWeathersCard" },
           },
@@ -34,10 +34,11 @@ async function weathersWebApplication() {
             attributes: { id: "gridWeathers" },
             children: [
               {
-                tag:   cardGenerator({
+                tag: cardGenerator({
                   size: "extraLarge",
                   status: "primary",
-                  upImage: "https://unsplash.com/photos/multicolored-painting-YXQew2KZjzY?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+                  upImage:
+                    "../public/images/weathers/jr-korpa-YXQew2KZjzY-unsplash.jpg",
                   title: weathersData.data.name,
                   pgraph: weathersData.data.main.temp,
                   //   weathersData.data.main.temp
@@ -50,7 +51,7 @@ async function weathersWebApplication() {
       },
     ],
   });
-  
+
   document.body.append(weathers);
 }
 export default weathersWebApplication;
