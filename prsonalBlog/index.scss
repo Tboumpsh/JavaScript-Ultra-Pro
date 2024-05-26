@@ -63,13 +63,13 @@
 }
 
 #blogSetting {
-  // @include display;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   position: absolute;
   flex-direction: column;
-  gap: 45px;
+  gap: 35px;
   width: 40%;
   height: 500px;
   background-color: rgba(47, 0, 70, 0.123);
