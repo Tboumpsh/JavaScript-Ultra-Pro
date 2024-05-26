@@ -20,6 +20,6 @@ function BlogList(postTitle, postBody) {
     ],
   });
 
-  blogBackground.append(lists);
+  cardSection.append(lists);
 }
 export default BlogList;
