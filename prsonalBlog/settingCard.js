@@ -4,6 +4,8 @@ import "./index.scss";
 import BlogList from "./blogList";
 
 function settingCards() {
+  let isOpen = false;
+
   let cardSetting = domGenerator({
     tag: "section",
     attributes: { id: "blogSetting" },
@@ -34,12 +36,11 @@ function settingCards() {
   });
 
   function publishBlogs() {
-    const blogSetting = document.getElementById("blogSetting");
-    blogSetting.style.display = "flex";
     let title = document.getElementById("titleBlog").value;
     let textArea = document.getElementById("descriptionArea").value;
     let getValue = new GetValue(title, textArea); // Added 'new' keyword
     getValue.fullBlog();
+    closeSetting();
   }
 
   function GetValue(postTitle, postBody) {
@@ -49,12 +50,16 @@ function settingCards() {
       BlogList(this.postTitle, this.postBody);
     };
   }
+
   function closeSetting() {
     const blogSetting = document.getElementById("blogSetting");
-    blogSetting.style.display = "none";
+    if (blogSetting) {
+      blogSetting.style.display = "none";
+    }
+    document.getElementById("titleBlog").value = '';
+    document.getElementById("descriptionArea").value = '';
   }
 
-  window.addEventListener("beforeunload", closeSetting);
   document.body.append(cardSetting);
 }
 export default settingCards;
