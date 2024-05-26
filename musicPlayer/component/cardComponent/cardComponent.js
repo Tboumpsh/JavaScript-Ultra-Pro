@@ -42,7 +42,7 @@ function cardGenerator({
         tag: "button",
         properties: { textContent: content },
         attributes: {
-          class: `cardComponent`,
+          class: `cardComponent ${className}`,
           href: anchorLink,
         },
       },
