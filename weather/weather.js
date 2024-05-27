@@ -4,7 +4,28 @@ import "./index.scss";
 
 import cardGenerator from "./component/cardComponentWeathers/weathersCard";
 
+/**
+ * Holds weather data fetched from the API.
+ *
+ * @type {any}
+ */
+
 let weathersData;
+
+/**
+ * Fetches weather data for a specified city in Iran and updates the DOM.
+ *
+ * This asynchronous function prompts the user to enter the name of a city in Iran, 
+ * fetches weather data for the specified city from the OpenWeatherMap API, 
+ * and updates the DOM to display the temperature information. If an error occurs 
+ * during the API request, an alert is shown with the error message.
+ *
+ * @function weathersWebApplication
+ * @returns {Promise<void>}
+ * @example
+ * // Call the function to start the weather data fetching process
+ * weathersWebApplication();
+ */
 async function weathersWebApplication() {
   let question = prompt("Type the name of your desired city in Iran.");
   try {
