@@ -4,19 +4,49 @@ import "./index.scss";
 import buttonGenerator from "./component/buttonComponent/buttonComponent";
 import cardGenerator from "./component/cardComponent/cardComponent";
 
+/**
+ * Initializes a music player platform with multiple songs and controls for playing, pausing, and navigating through the playlist.
+ *
+ * This function defines a `music` class to represent a music track, including methods to play and pause the track.
+ * It creates instances of the `music` class for a predefined set of songs, stores them in an array, and sets up
+ * control buttons for playing, pausing, forwarding, and rewinding through the songs. It also updates the displayed
+ * song image based on the current song.
+ *
+ * @function musicPlayerPlatform
+ * @returns {void}
+ * @example
+ * // Call the function to initialize the music player
+ * musicPlayerPlatform();
+ */
 function musicPlayerPlatform() {
+  /**
+   * Represents a music track.
+   * @class
+   */
   class music {
+    /**
+     * Creates an instance of a music track.
+     * @param {string} name - The name of the music track.
+     * @param {string} address - The URL address of the music track.
+     * @param {string} image - The URL of the image associated with the music track.
+     */
     constructor(name, address, image) {
       this.name = name;
       this.address = address;
       this.image = image;
       this.audio = new Audio(this.address);
     }
-
+    /**
+     * Plays the music track.
+     * @returns {void}
+     */
     play() {
       this.audio.play();
     }
-
+    /**
+     * Pauses the music track.
+     * @returns {void}
+     */
     pause() {
       this.audio.pause();
     }
@@ -52,13 +82,20 @@ function musicPlayerPlatform() {
 
   let currentMusicIndex = 0;
   let isPlaying = false;
-
+  /**
+   * Renders the image of the current music track.
+   * @returns {void}
+   */
   function renderImage() {
     const cardElement = document.querySelector(".CardMusicPlayer img");
     if (cardElement) {
       cardElement.src = musicArray[currentMusicIndex].image;
     }
   }
+  /**
+   * Moves to the next music track in the array.
+   * @returns {void}
+   */
   function forwardButton() {
     if (currentMusicIndex < musicArray.length - 1) {
       musicArray[currentMusicIndex].pause();
@@ -69,7 +106,10 @@ function musicPlayerPlatform() {
       renderImage();
     }
   }
-
+  /**
+   * Moves to the previous music track in the array.
+   * @returns {void}
+   */
   function rewindButton() {
     if (currentMusicIndex > 0) {
       musicArray[currentMusicIndex].pause();
@@ -80,6 +120,10 @@ function musicPlayerPlatform() {
       renderImage();
     }
   }
+  /**
+   * Toggles play/pause for the current music track.
+   * @returns {void}
+   */
   function playButton() {
     if (isPlaying) {
       musicArray[currentMusicIndex].pause();
