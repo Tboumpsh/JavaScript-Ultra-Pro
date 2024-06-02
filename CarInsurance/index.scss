@@ -1,0 +1,69 @@
+@mixin display() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#insuranceBackground {
+  width: 100vw;
+  height: 100vh;
+  @include display;
+  background-image: url("../public/images/carInsurance/jake-blucker-tMzCrBkM99Y-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+
+  #insuranceSection {
+    width: 35%;
+    height: 85%;
+    background-color: rgba(43, 43, 43, 0.911);
+    @include display;
+    flex-direction: column;
+    justify-content: normal;
+    border-radius: 10px;
+    filter: contrast(5px);
+    padding: 2%;
+    box-shadow: inset 0 0 8px 1px #232323;
+
+
+    #formInsuranceTitle{
+      font-size: 40px;
+      color: white;
+    }
+  }
+
+
+}
+#insuranceForm {
+  width: 100%;
+  height: 100%;
+  @include display;
+  flex-direction: column;
+  justify-content: center;
+  gap: 45px;
+  padding: 2% 0;
+
+  #radioSection {
+    @include display;
+    width: 80%;
+    justify-content: space-around;
+
+    #radioSectionUP {
+      @include display;
+    }
+    #radioSectionDown {
+      @include display;
+    }
+  }
+  #buttonsSection {
+    width: 90%;
+    @include display;
+    gap: 10px;
+  }
+
+  .selectComponentWrapper > .selectComponent{
+    width: 150px;
+  }
+}
+
