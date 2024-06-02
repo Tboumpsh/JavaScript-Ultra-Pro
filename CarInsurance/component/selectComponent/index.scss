@@ -1,0 +1,101 @@
+.selectComponentWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  // max with
+  img {
+    max-width: 20px;
+  }
+  .selectComponent {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &[data-size="medium"] {
+    width: 250px;
+    height: 56px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  &[data-size="large"] {
+    width: 380px;
+    height: 60px;
+    border-radius: 8px;
+    font-size: 24px;
+  }
+  &[data-size="small"] {
+    width: 172px;
+    height: 43px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  &[data-size="extraSmall"] {
+    width: 68px;
+    height: 60px;
+    border-radius: 4px;
+  }
+  &[data-size="extraLarge"] {
+    width: 264px;
+    height: 56px;
+    border-radius: 4px;
+    font-size: 24px;
+  }
+  &[data-status="primary"] {
+    background-color: rgba(255, 255, 255, 0.842);
+    // filter: blur(1px);
+    color: #a77769;
+    text-align: center;
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      color:  #a77769;
+    }
+    &:focus,
+    &:active {
+      background-color: rgba(109, 60, 51, 0.699);
+    }
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
+    }
+  }
+  &[data-status="second"] {
+    background-color: rgba(255, 255, 255, 0.909);
+    color: #000000;
+    text-align: center;
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      color: rgba(26, 46, 53, 1);
+    }
+    &:focus,
+    &:active {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      background-color: rgb(243, 242, 242);
+
+    }
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="third"] {
+    background-color: rgba(239, 155, 5, 0.61);
+    color: #1c1c1c;
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+}
