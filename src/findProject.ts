@@ -6,6 +6,7 @@ import sendEmailType from "../TypeScriptSendEmail/sendEmail";
 import musicPlayerPlatform from "../musicPlayer/musicPlayer";
 import temperatureConvert from "../convertCtoF/convert";
 import weathersWebApplication from "../weather/weather";
+import carInsurance from "../CarInsurance/carInsurance";
 import personalBlog from "../prsonalBlog/personalBlog";
 import createColors from "../createColor/createColor";
 import silverBox from "./Lib/silverBox/silverBox.min";
@@ -34,6 +35,7 @@ function findChallenge() {
     rockPaperScissorsGame: () => rockPaperScissorsGame(),
     personalBlog: () => personalBlog(),
     weathersWebApplication: () => weathersWebApplication,
+    carInsurance: () => carInsurance,
   };
   /**
    * Iterates over the array of function names and executes the function if a match is found.
