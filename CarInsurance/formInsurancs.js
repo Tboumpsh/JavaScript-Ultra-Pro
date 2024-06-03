@@ -5,6 +5,7 @@ import buttonGenerator from "./component/buttonComponent/buttonsComponent";
 import selectGenerator from "./component/selectComponent/selectComponent";
 import inputGenerator from "./component/inputComponent/inputComponent";
 import labelGenerator from "./component/lableComponent/labelComponent";
+import checkOptions from "./checkOption";
 
 function formInsurance() {
   let forms = domGenerator({
@@ -39,7 +40,7 @@ function formInsurance() {
             children: [
               {
                 tag: labelGenerator({
-                  content: "insurance",
+                  content: "Body insurance",
                   size: "medium",
                   status: "primary",
                 }),
@@ -63,7 +64,7 @@ function formInsurance() {
             children: [
               {
                 tag: labelGenerator({
-                  content: "insurance",
+                  content: "Third party insurance",
                   size: "medium",
                   status: "primary",
                 }),
@@ -72,9 +73,9 @@ function formInsurance() {
                 tag: inputGenerator({
                   inputId: "two",
                   type: "radio",
-                  // eventListeners:{},
                   size: "medium",
                   statues: "primary",
+                  eventListeners: { click: ThirdPartyInsurance },
                 }),
                 properties: { name: "IC" },
                 // attributes: { id: "one" },
@@ -114,6 +115,10 @@ function formInsurance() {
       },
     ],
   });
+
+  function ThirdPartyInsurance() {
+    checkOptions();
+  }
   return forms;
 }
 export default formInsurance;
