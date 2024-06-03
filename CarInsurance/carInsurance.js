@@ -4,7 +4,6 @@ import "./index.scss";
 import createOptionsCarNames from "./createOptionsName";
 import createOptionYear from "./createOption";
 import formInsurance from "./formInsurancs";
-import checkOptions from "./checkOption";
 
 function carInsurance() {
   let insurance = domGenerator({
@@ -31,7 +30,6 @@ function carInsurance() {
   function renderCars() {
     createOptionYear();
     createOptionsCarNames();
-    checkOptions();
   }
   document.body.append(insurance);
 }
