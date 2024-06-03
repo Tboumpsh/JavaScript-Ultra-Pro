@@ -1,53 +1,105 @@
 function checkOptions() {
-  let select = document.querySelectorAll(".selectComponent");
-  let option = document.querySelectorAll(".selectComponent option");
+  let base_price = 2_500_000;
+  let selects = document.querySelectorAll(".selectComponent");
 
-  //   for (let i = 0; i < select.length; i++) {
-  //     let year = select[0];
-  //     let name = select[1];
+  let typeOfCars = [
+    {
+      name: "Benz",
+      ratio: 2.1,
+    },
+    {
+      name: "Audi",
+      ratio: 1.2,
+    },
+    {
+      name: "Bentley",
+      ratio: 3.1,
+    },
+    {
+      name: "BMW",
+      ratio: 1.3,
+    },
+    {
+      name: "Ferrari",
+      ratio: 1.8,
+    },
+    {
+      name: "Bugatti",
+      ratio: 1.5,
+    },
+    {
+      name: "Jaguar",
+      ratio: 1.9,
+    },
+    {
+      name: "Lamborghini",
+      ratio: 1.7,
+    },
+    {
+      name: "LandRover",
+      ratio: 2.2,
+    },
+    {
+      name: "McLarne",
+      ratio: 2.5,
+    },
+    {
+      name: "MercedesBenz",
+      ratio: 2.3,
+    },
+    {
+      name: "MorrisMini-Minor",
+      ratio: 2.4,
+    },
+    {
+      name: "Porsche",
+      ratio: 1.4,
+    },
+    {
+      name: "Rolls-Royce",
+      ratio: 4.1,
+    },
+  ];
 
-  //     year.setAttribute("data-year", "year");
-  //     name.setAttribute("data-name", "name");
-  //   }
-
-  for (let i = 0; i < select.length; i++) {
-    select[i].addEventListener("click", optionsChecked);
-  }
+  selects.forEach((select) => {
+    select.addEventListener("change", optionsChecked);
+  });
 
   function optionsChecked(e) {
-    // if (e.target.getAttribute("data-year")) {
-    let nowYear = new Date().getUTCFullYear();
-    for (let j = 0; j < option.length; j++) {
-      if (option[j].value.includes(nowYear)) {
-        console.log(e.target.children[j].value);
+    let selectedOption = e.target.options[e.target.selectedIndex];
+    
+    //  get value
+    let value = selectedOption.value;
+
+    console.log(`Selected value: ${value}`);
+    // now year
+    for (let i = 0; i < typeOfCars.length; i++) {
+      // typeOfCars[i].ratio;
+      if (value.includes(typeOfCars[i].name)) {
+      //  console.log(typeOfCars[i].ratio);
+       base_price *= typeOfCars[i].ratio;
+       console.log(base_price);
       }
     }
-    // } else if (e.target.getAttribute("data-name")) {
-    // }
+    let nowYear = new Date().getUTCFullYear();
+    // rato year
+
+    if (Number(value) < nowYear) {
+      let result = nowYear - Number(value);
+      console.log(result);
+      let ratoYear = result * 1.2;
+      base_price *= ratoYear;
+      console.log(base_price);
+    }
+
+    if (value.includes(nowYear.toString())) {
+      console.log(`The value "${value}" includes the current year ${nowYear}.`);
+    } else {
+      console.log(
+        `The value "${value}" does not include the current year or the word "car".`
+      );
+    }
   }
 }
+
 export default checkOptions;
-// function checkOptions() {
-//     let select = document.querySelectorAll(".selectComponent");
-//     let option = document.querySelectorAll(".selectComponent option");
-
-//     for (let i = 0; i < select.length; i++) {
-//       select[i].addEventListener("click", optionsChecked);
-//     }
-
-//     function optionsChecked(e) {
-//       if (e.target.getAttribute("data-year")) {
-//         let nowYear = new Date().getUTCFullYear();
-//         console.log(e.target.children[j]);
-//         for (let j = 0; j < e.target.children.length; j++) {
-
-//           if (e.target.children[j] instanceof HTMLOptionElement) {
-//             console.log(e.target.children[j].value);
-//           }
-//         }
-//       } else if (e.target.getAttribute("data-name")) {
-//         // code to handle name selection
-//       }
-//     }
-//   }
-//   export default checkOptions;
