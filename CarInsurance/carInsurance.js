@@ -1,9 +1,9 @@
 import domGenerator from "dom-generator";
-import "./index.scss";
+import "./src/styles/index.scss";
 
-import createOptionsCarNames from "./createOptionsName";
-import createOptionYear from "./createOption";
-import formInsurance from "./formInsurancs";
+import createOptionsCarNames from "./src/js/createOptionsName";
+import createOptionYear from "./src/js/createOption";
+import formInsurance from "./src/js/formInsurancs";
 
 function carInsurance() {
   let insurance = domGenerator({
