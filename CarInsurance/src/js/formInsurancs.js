@@ -1,31 +1,33 @@
 import domGenerator from "dom-generator";
-import "./index.scss";
 
-import buttonGenerator from "./component/buttonComponent/buttonsComponent";
-import selectGenerator from "./component/selectComponent/selectComponent";
-import inputGenerator from "./component/inputComponent/inputComponent";
-import labelGenerator from "./component/lableComponent/labelComponent";
-import checkOptions from "./checkOption";
+import buttonGenerator from "../../component/buttonComponent/buttonsComponent";
+import selectGenerator from "../../component/selectComponent/selectComponent";
+import inputGenerator from "../../component/inputComponent/inputComponent";
+import labelGenerator from "../../component/lableComponent/labelComponent";
+import silverBox from "/src/Lib/silverBox/silverBox.min";
+import typeOfCars from "../data/objectInformationCars";
+import checkType from "./checkTypeData";
 
 function formInsurance() {
   let forms = domGenerator({
     tag: "form",
     attributes: { id: "insuranceForm" },
+    eventListeners: { submit: (e) => e.preventDefault() },
     children: [
       {
         tag: selectGenerator({
           size: "large",
           status: "primary",
           className: "selectOptionCarYear",
-          // eventListeners:{},
+          id: "year",
         }),
-        // children: [],
       },
       {
         tag: selectGenerator({
           size: "large",
           status: "primary",
           className: "selectOptionCarName",
+          id: "carName",
           // eventListeners:{},
         }),
         // children: [],
@@ -33,6 +35,7 @@ function formInsurance() {
       {
         tag: "div",
         attributes: { id: "radioSection" },
+        dataAttributes: { type: "body" },
         children: [
           {
             tag: "div",
@@ -52,9 +55,10 @@ function formInsurance() {
                   // eventListeners:{},
                   size: "medium",
                   statues: "primary",
+                  eventListeners: { change: checkType },
                 }),
                 // attributes: { id: "one" },
-                properties: { name: "IC" },
+                properties: { name: "IC", checked: "true" },
               },
             ],
           },
@@ -71,15 +75,13 @@ function formInsurance() {
               },
               {
                 tag: inputGenerator({
-                  inputId: "two",
+                  inputId: "third",
                   type: "radio",
                   size: "medium",
                   statues: "primary",
-                  eventListeners: { click: ThirdPartyInsurance },
+                  eventListeners: { change: checkType },
                 }),
                 properties: { name: "IC" },
-                // attributes: { id: "one" },
-                // properties: { type: "radio" },
               },
             ],
           },
@@ -95,7 +97,7 @@ function formInsurance() {
               size: "large",
               status: "primary",
               className: "calculateButton",
-              // eventListeners: {},
+              eventListeners: { click: showResult },
             }),
             // attributes: { id: "calculateButton" },
             // properties: { textContent: "action" },
@@ -108,16 +110,41 @@ function formInsurance() {
               size: "large",
               statues: "resetInput",
             }),
-            // attributes: { id: "one" },
-            // properties: { type: "radio" },
           },
         ],
       },
     ],
   });
 
-  function ThirdPartyInsurance() {
-    checkOptions();
+  function showResult() {
+    let parentRadioSection = document.getElementById("radioSection");
+    let insuranceType = parentRadioSection.dataset.type;
+    let base_price = insuranceType == "third" ? 3_500_000 : 2_500_000;
+    let year = document.getElementById("year");
+    let carName = document.getElementById("carName");
+
+    //  get value
+
+    let nowYear = new Date().getUTCFullYear();
+    // rato year
+
+    if (Number(year.value) < nowYear) {
+      let result = nowYear - Number(year.value);
+      let ratoYear = result * 1.2;
+      base_price *= ratoYear * typeOfCars[carName.value];
+    }
+    silverBox({
+      customIcon: "https://silverboxjs.ir/public/src/images/lightTimeout.png",
+      title: {
+        text:
+          insuranceType == "third"
+            ? "Third party insurance "
+            : "Body Insurance",
+      },
+      text: Math.floor(base_price).toLocaleString(),
+      centerContent: true,
+      showCloseButton: true,
+    });
   }
   return forms;
 }
