@@ -23,6 +23,7 @@ function selectGenerator({
   className = "",
   anchorLink = "#",
   eventListeners = {},
+  id = "",
   disabled,
 }) {
   let selects = domGenerator({
@@ -39,6 +40,7 @@ function selectGenerator({
         attributes: {
           class: `selectComponent`,
           href: anchorLink,
+          id:id
         },
       },
     ],

@@ -54,10 +54,7 @@
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       color:  #a77769;
     }
-    &:focus,
-    &:active {
-      background-color: rgba(109, 60, 51, 0.699);
-    }
+
     &:disabled {
       color: #8c8c8c;
       background-color: #ececec;
