@@ -93,7 +93,7 @@ function formInsurance() {
         children: [
           {
             tag: buttonGenerator({
-              content: "click button",
+              content: "calculate",
               size: "large",
               status: "primary",
               className: "calculateButton",
@@ -134,14 +134,14 @@ function formInsurance() {
       base_price *= ratoYear * typeOfCars[carName.value];
     }
     silverBox({
-      customIcon: "https://silverboxjs.ir/public/src/images/lightTimeout.png",
+      customIcon: "https://images.vexels.com/media/users/3/135880/isolated/preview/aed603eafeda47aaca93b292db4a9141-electric-car-circle-icon.png",
       title: {
         text:
           insuranceType == "third"
             ? "Third party insurance "
             : "Body Insurance",
       },
-      text: Math.floor(base_price).toLocaleString(),
+      text: 'price:' + Math.floor(base_price).toLocaleString(),
       centerContent: true,
       showCloseButton: true,
     });
