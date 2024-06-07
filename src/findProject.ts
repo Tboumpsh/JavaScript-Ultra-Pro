@@ -34,8 +34,8 @@ function findChallenge() {
     musicPlayerPlatform: () => musicPlayerPlatform(),
     rockPaperScissorsGame: () => rockPaperScissorsGame(),
     personalBlog: () => personalBlog(),
-    weathersWebApplication: () => weathersWebApplication,
-    carInsurance: () => carInsurance,
+    weathersWebApplication: () => weathersWebApplication(),
+    carInsurance: () => carInsurance(),
   };
   /**
    * Iterates over the array of function names and executes the function if a match is found.
