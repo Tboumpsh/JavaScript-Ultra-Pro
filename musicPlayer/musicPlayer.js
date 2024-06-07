@@ -153,7 +153,7 @@ function musicPlayerPlatform() {
             children: [
               {
                 tag: buttonGenerator({
-                  content: "play",
+                  content: "Previous",
                   size: "medium",
                   statues: "primary",
                   eventListeners: { click: rewindButton },
@@ -169,7 +169,7 @@ function musicPlayerPlatform() {
               },
               {
                 tag: buttonGenerator({
-                  content: "play",
+                  content: "Next",
                   size: "medium",
                   statues: "primary",
                   eventListeners: { click: forwardButton },
