@@ -34,10 +34,6 @@
         transform: scale(1.1);
         transition-duration: 1s;
       }
-      &:focus,
-      &:active {
-        // border-bottom: 4px solid rgba(26, 46, 53, 1);
-      }
       &:disabled {
         color: #8c8c8c;
         background-color: #ececec;
@@ -51,7 +47,14 @@
       outline: none;
   
       &:hover {
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: #a7796982 0px 2px 8px 0px;
+        cursor: pointer;
+        background-color: transparent;
+        color: #ae867a;
+        font-weight: 800;
+        border: 3px solid #ae867a;
+        width: 240px;
+        height: 70px;
       }
       &:focus,
       &:active {

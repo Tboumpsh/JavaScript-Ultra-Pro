@@ -1,104 +1,106 @@
 .buttonComponentInsurance {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  // max with
+  img {
+    max-width: 20px;
+  }
+  .buttonCarInsurance {
+    background-color: transparent;
+    border: none;
+    color: inherit;
     cursor: pointer;
-    // max with
-    img {
-      max-width: 20px;
-    }
-    .buttonCarInsurance {
+  }
+
+  &[data-size="medium"] {
+    width: 192px;
+    height: 56px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  &[data-size="large"] {
+    width: 236px;
+    height: 69px;
+    border-radius: 8px;
+    font-size: 24px;
+  }
+  &[data-size="small"] {
+    width: 172px;
+    height: 43px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  &[data-size="extraSmall"] {
+    width: 68px;
+    height: 60px;
+    border-radius: 4px;
+  }
+  &[data-size="extraLarge"] {
+    width: 264px;
+    height: 56px;
+    border-radius: 4px;
+    font-size: 24px;
+  }
+  &[data-status="primary"] {
+    background-color: rgb(109 60 51);
+    color: #ececec;
+    text-align: center;
+
+    &:hover {
+      box-shadow: rgba(147, 147, 147, 0.2) 0px 2px 8px 0px;
       background-color: transparent;
-      border: none;
-      color: inherit;
-      cursor: pointer;
+      color: rgb(109 60 51);
+      font-weight: 800;
+      border: 3px solid rgb(109 60 51);
+      width: 230px;
+      height: 64px;
     }
-  
-    &[data-size="medium"] {
-      width: 192px;
-      height: 56px;
-      border-radius: 4px;
-      font-size: 16px;
+    &:focus,
+    &:active {
+      border: 3px solid rgba(239, 155, 5, 1);
     }
-    &[data-size="large"] {
-      width: 236px;
-      height: 69px;
-      border-radius: 8px;
-      font-size: 24px;
-    }
-    &[data-size="small"] {
-      width: 172px;
-      height: 43px;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-    &[data-size="extraSmall"] {
-      width: 68px;
-      height: 60px;
-      border-radius: 4px;
-    }
-    &[data-size="extraLarge"] {
-      width: 264px;
-      height: 56px;
-      border-radius: 4px;
-      font-size: 24px;
-    }
-    &[data-status="primary"] {
-      background-color: rgb(109 60 51);
-      color: #ececec;
-      text-align: center;
-  
-      &:hover {
-        transform: scale(1.1);
-        transition-duration: 1s;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        color: rgba(239, 155, 5, 1);
-      }
-      &:focus,
-      &:active {
-        border: 3px solid rgba(239, 155, 5, 1);
-      }
-      &:disabled {
-        color: #8c8c8c;
-        background-color: #ececec;
-      }
-    }
-    &[data-status="Refresh"] {
-      background-color: rgba(239, 155, 5, 1);
-      color: #ececec;
-      text-align: center;
-      transition: 0.3s;
-  
-      &:hover {
-        transform: scale(1.1);
-        transition-duration: 1s;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        color: rgba(26, 46, 53, 1);
-      }
-      &:focus,
-      &:active {
-        border: 3px solid rgba(26, 46, 53, 1);
-      }
-      &:disabled {
-        color: #8c8c8c;
-      }
-    }
-  
-    &[data-status="secondary"] {
-      background-color: rgba(239, 155, 5, 0.61);
-      color: #1c1c1c;
-  
-      &:hover {
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      }
-      &:focus,
-      &:active {
-        background-color: transparent;
-      }
-      &:disabled {
-        color: #8c8c8c;
-      }
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
     }
   }
-  
+  &[data-status="Refresh"] {
+    background-color: rgba(239, 155, 5, 1);
+    color: #ececec;
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: 1s;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      color: rgba(26, 46, 53, 1);
+    }
+    &:focus,
+    &:active {
+      border: 3px solid rgba(26, 46, 53, 1);
+    }
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="secondary"] {
+    background-color: rgba(239, 155, 5, 0.61);
+    color: #1c1c1c;
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+}
