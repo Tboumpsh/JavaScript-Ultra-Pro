@@ -15,9 +15,9 @@ let weathersData;
 /**
  * Fetches weather data for a specified city in Iran and updates the DOM.
  *
- * This asynchronous function prompts the user to enter the name of a city in Iran, 
- * fetches weather data for the specified city from the OpenWeatherMap API, 
- * and updates the DOM to display the temperature information. If an error occurs 
+ * This asynchronous function prompts the user to enter the name of a city in Iran,
+ * fetches weather data for the specified city from the OpenWeatherMap API,
+ * and updates the DOM to display the temperature information. If an error occurs
  * during the API request, an alert is shown with the error message.
  *
  * @function weathersWebApplication
@@ -32,6 +32,7 @@ async function weathersWebApplication() {
     weathersData = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${question}&appid=ebe61a099aba6dca4efcb2c23c229df9&units=metric`
     );
+    console.log(weathersData);
   } catch (error) {
     alert(error);
   }
@@ -61,7 +62,13 @@ async function weathersWebApplication() {
                   upImage:
                     "../public/images/weathers/jr-korpa-YXQew2KZjzY-unsplash.jpg",
                   title: weathersData.data.name,
-                  pgraph: weathersData.data.main.temp,
+                  pgraph: `
+                  temperature : ${weathersData.data.main.temp} 
+                  wind speed : ${weathersData.data.wind.speed} 🌊          
+                  sky : ${weathersData.data.weather[0].main}
+
+                  
+                  `,
                   //   weathersData.data.main.temp
                   // weathersData.data.name
                 }),
